@@ -5,6 +5,7 @@ namespace App\Http\Controllers\API;
 use App\Http\Controllers\Controller;
 use App\Models\ListAplikasi;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class ListAplikasiController extends Controller
 {
@@ -64,18 +65,32 @@ class ListAplikasiController extends Controller
         ]);
     }
 
-    public function update(Request $request, $id)
+    public function update(Request $request, ListAplikasi $listAplikasi)
    {
-        $listaplikasi = ListAplikasi::where('id', $id)->firstOrFail();
-        $listaplikasi->nama = $request->nama;
-        $listaplikasi->url = $request->url;
-        $listaplikasi->foto = $request->foto;
-        $listaplikasi->status = $request->status;
-        $listaplikasi->save();
+        $request->validate([
+            'nama' => 'required',
+            'url' => 'required',
+            'foto' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'status' => 'required',
+        ]);
+
+        $input = $request->all();
+        if ($image = $request->file('foto')) {
+            $destionationPath = 'image/foto/';
+            $aplikasiImg = date('YmdHis') . "." . $image->getClientOriginalExtension();
+            $image->move($destionationPath, $aplikasiImg);
+            $input['foto'] = $aplikasiImg;
+        } else {
+            unset($input['foto']);
+        }
+
+        $listAplikasi->update($input);
 
         return response()->json([
-            'message' => 'Data berhasil diupdate'
+            'message' => 'Aplikasi telah diupdate',
+            'data' => $input
         ]);
+
    }
    
    public function destroy($id)

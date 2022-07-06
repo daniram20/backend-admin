@@ -20,20 +20,20 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Auth::routes();
+// Auth::routes();
 
-Route::get('admin/home', [HomeController::class, 'adminHome'])->name('admin.home')->middleware('is_admin');
-Route::get('home', [HomeController::class, 'userHome'])->name('user.home');
+// Route::get('admin/home', [HomeController::class, 'adminHome'])->name('admin.home')->middleware('is_admin');
+// Route::get('home', [HomeController::class, 'userHome'])->name('user.home');
 
-Route::prefix('list')->group(function(){
-    Route::get('/all', [ListAplikasiController::class, 'index']);
-    Route::post('/tambah', [ListAplikasiController::class, 'store']);
-    Route::get('/aplikasi/{id}', [ListAplikasiController::class, 'show']);
-    Route::put('/update/{id}', [ListAplikasiController::class, 'update']);
-    Route::delete('/delete/{id}', [ListAplikasiController::class, 'destroy']);
-});
+// Route::prefix('list')->group(function(){
+//     Route::get('/all', [ListAplikasiController::class, 'index']);
+//     Route::post('/tambah', [ListAplikasiController::class, 'store']);
+//     Route::get('/aplikasi/{id}', [ListAplikasiController::class, 'show']);
+//     Route::put('/update/{id}', [ListAplikasiController::class, 'update']);
+//     Route::delete('/delete/{id}', [ListAplikasiController::class, 'destroy']);
+// });
 
-Route::prefix('token')->group(function(){
-    Route::get('/all', [TokenController::class, 'index']);
-    Route::post('/tambah', [TokenController::class, 'store']);
-});
+// Route::prefix('token')->group(function(){
+//     Route::get('/all', [TokenController::class, 'index']);
+//     Route::post('/tambah', [TokenController::class, 'store']);
+// });
