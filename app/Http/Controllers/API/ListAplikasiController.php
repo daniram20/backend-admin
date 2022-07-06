@@ -8,11 +8,14 @@ use Illuminate\Http\Request;
 
 class ListAplikasiController extends Controller
 {
-    // public function index()
-    // {
-    //     $dataList = ListAplikasi::all();
-    //     return view('listaplikasi.listaplikasi', compact('dataList'));
-    // }
+    public function index()
+    {
+        $dataList = ListAplikasi::all();
+        return response()->json([
+            'message' => 'Data List Aplikasi',
+            'data' => $dataList
+        ]);
+    }
 
     public function store(Request $request)
     {
