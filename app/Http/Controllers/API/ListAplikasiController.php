@@ -30,6 +30,7 @@ class ListAplikasiController extends Controller
 
         $request->validate([
             'nama' => 'required',
+            'url' => 'required',
             'foto' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'status' => 'required',
         ]);
@@ -64,12 +65,13 @@ class ListAplikasiController extends Controller
    {
         $listaplikasi = ListAplikasi::where('id', $id)->firstOrFail();
         $listaplikasi->nama = $request->nama;
+        $listaplikasi->url = $request->url;
         $listaplikasi->foto = $request->foto;
         $listaplikasi->status = $request->status;
         $listaplikasi->save();
 
         return response()->json([
-            'message' => 'data berhasil diupdate'
+            'message' => 'Data berhasil diupdate'
         ]);
    }
    
