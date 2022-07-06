@@ -5,6 +5,7 @@ namespace App\Http\Controllers\API;
 use App\Http\Controllers\Controller;
 use App\Models\ListAplikasi;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\URL;
 use Illuminate\Support\Facades\Validator;
 
 class ListAplikasiController extends Controller
@@ -51,7 +52,10 @@ class ListAplikasiController extends Controller
 
         return response()->json([
             'message' => 'Aplikasi telah ditambahkan',
-            'data' => $input
+            'nama' => $request->nama,
+            'url' => $request->url,
+            'foto' => asset('image/foto/' . $aplikasiImg),
+            'status' => $request->status,
         ]);
     }
 
