@@ -1,14 +1,11 @@
 <?php
 
-namespace App\Http\Controllers\API;
+namespace App\Http\Controllers;
 
-use App\Http\Controllers\Controller;
 use App\Models\ListAplikasi;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\URL;
-use Illuminate\Support\Facades\Validator;
 
-class ListAplikasiController extends Controller
+class ViewAplikasiController extends Controller
 {
     public function index()
     {
