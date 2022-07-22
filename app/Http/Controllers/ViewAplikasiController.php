@@ -10,10 +10,7 @@ class ViewAplikasiController extends Controller
     public function index()
     {
         $dataList = ListAplikasi::all();
-        return response()->json([
-            'message' => 'Data List Aplikasi',
-            'data' => $dataList
-        ]);
+        return view('listaplikasi.listaplikasi');
     }
 
     public function store(Request $request)

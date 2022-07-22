@@ -3,8 +3,10 @@
 namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
+use App\Http\Resources\ListAplikasiResource;
 use App\Models\ListAplikasi;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\URL;
 use Illuminate\Support\Facades\Validator;
 
@@ -12,119 +14,91 @@ class ListAplikasiController extends Controller
 {
     public function index()
     {
-        $dataList = ListAplikasi::all();
-        return response()->json([
-            'message' => 'Data List Aplikasi',
-            'data' => $dataList
-        ]);
+        $data = ListAplikasi::latest()->get();
+        return ListAplikasiResource::collection($data);
     }
 
     public function store(Request $request)
     {
-        $listaplikasi = new ListAplikasi();
-
-        $request->validate([
-            'nama'=>'required',
-            'url'=>'required',
-            'foto'=>'required|max:2048',
-            'status'=>'required',
+        $validator = Validator::make($request->all(), [
+            'nama' => 'required|string|max:255',
+            'url' => 'required|string',
+            'foto' => 'required|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'status' => 'required|string'
         ]);
 
-        $filename="";
-        if($request->hasFile('foto')){
-            $filename=$request->file('foto')->store('posts', 'public');
-        }else{
-            $filename=null;
+        if($validator->fails()){
+            return response()->json($validator->errors());
         }
 
-        $listaplikasi->nama=$request->nama;
-        $listaplikasi->url=$request->url;
-        $listaplikasi->foto=$filename;
-        $listaplikasi->status=$request->status;
-        $listaplikasi->save();
-
-        return response()->json([
-            'message' => 'Data berhasil ditambahkan',
-            'data' => $listaplikasi,
+        $file = $request->file('foto');
+        $destionationPath = "public\images";
+        $filename = 'aplikasi_' . date("Ymd_his") . '.' . $file->extension();
+        $aplikasi = ListAplikasi::create([
+            'nama' => $request->nama,
+            'url' => $request->url,
+            'foto' => $filename,
+            'status' => $request->status,
         ]);
+        Storage::putFileAs($destionationPath, $file, $filename);
 
-        // $request->validate([
-        //     'nama' => 'required',
-        //     'url' => 'required',
-        //     'foto' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-        //     'status' => 'required',
-        // ]);
-
-        // $input = $request->all();
-        // if ($image = $request->file('foto')) {
-        //     $destionationPath = 'image/foto/';
-        //     $aplikasiImg = date('YmdHis') . "." . $image->getClientOriginalExtension();
-        //     $image->move($destionationPath, $aplikasiImg);
-        //     $input['foto'] = $aplikasiImg;
-        // }
-
-        // ListAplikasi::create($input);
-
-        // return response()->json([
-        //     'message' => 'Aplikasi telah ditambahkan',
-        //     'nama' => $request->nama,
-        //     'url' => $request->url,
-        //     'foto' => asset('image/foto/' . $aplikasiImg),
-        //     'status' => $request->status,
-        // ]);
+        return response()->json(['Aplikasi berhasil ditambahkan.', new ListAplikasiResource($aplikasi)]);
     }
 
     public function show($id)
     {
-        $listaplikasi = ListAplikasi::where('id', $id)->first();
-
-        return response()->json([
-            'message' => 'Detail Data List Aaplikasi',
-            'data' => $listaplikasi
-        ]);
+         $aplikasi = ListAplikasi::find($id);
+        if (is_null($aplikasi)) {
+            return response()->json(['error' => 'Aplikasi not found.'], 404);
+        }
+        return response()->json(['Aplikasi fetched successfully.', new ListAplikasiResource($aplikasi)]);
     }
 
     public function update(Request $request, ListAplikasi $listAplikasi)
    {
-        $request->validate([
-            'nama' => 'required',
-            'url' => 'required',
-            'foto' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-            'status' => 'required',
+         $validator = Validator::make($request->all(), [
+            'nama' => 'required|string|max:255',
+            'url' => 'required|string',
+            'foto' => 'required|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'status' => 'required|string'
         ]);
 
-        $input = $request->all();
-        if ($image = $request->file('foto')) {
-            $destionationPath = 'image/foto/';
-            $aplikasiImg = date('YmdHis') . "." . $image->getClientOriginalExtension();
-            $image->move($destionationPath, $aplikasiImg);
-            $input['foto'] = $aplikasiImg;
-        } else {
-            unset($input['foto']);
+        if ($validator->fails()) {
+            return response()->json($validator->errors());
         }
 
-        $listAplikasi->update($input);
+        if($request->hasFile('foto')) {
 
-        return response()->json([
-            'message' => 'Aplikasi telah diupdate',
-            'data' => $input
-        ]);
+            $file = $request->file('foto');
+            $destinationPath = "public\images";
+            $filename = 'aplikasi_' . date("Ymd_his") . '.' . $file->extension();
+            Storage::putFileAs($destinationPath, $file, $filename);
+
+            Storage::delete('public/images/' . $listAplikasi->foto);
+
+            $listAplikasi->update([
+                'nama' => $request->nama,
+                'url' => $request->url,
+                'foto' => $filename,
+                'status' => $request->status,
+            ]);
+        } else {
+            $listAplikasi->update([
+                'nama' => $request->nama,
+                'url' => $request->url,
+                'status' => $request->status,
+            ]);
+        }
+
+        return response()->json(['Aplikasi updated successfully.', new ListAplikasiResource($listAplikasi)]);
 
    }
    
-   public function destroy($id)
+   public function destroy(ListAplikasi $listAplikasi)
    {
-        $listaplikasi = ListAplikasi::where('id', $id)->delete();
+        $listAplikasi->delete();
+        Storage::delete('public/images/' . $listAplikasi->foto);
         
-        if ($listaplikasi != null) {
-            return response()->json([
-                'message' => 'Data list aplikasi dihapus',
-                'data' => $listaplikasi
-            ]);
-        } else {
-            return response()->json([
-                'message' => 'Data tidak ditemukan',
-            ], 404);
-        }
+        return response()->json(['Aplikasi deleted successfully.']);
    }
 }

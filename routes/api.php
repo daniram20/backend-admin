@@ -31,15 +31,17 @@ Route::group(['middleware' => ['auth:sanctum']], function () {
     Route::post('/logout', [App\Http\Controllers\API\AuthController::class, 'logout']);
 });
 
-Route::prefix('list')->group(function(){
-    Route::get('/all', [ListAplikasiController::class, 'index']);
-    Route::post('/tambah', [ListAplikasiController::class, 'store']);
-    Route::get('/aplikasi/{id}', [ListAplikasiController::class, 'show']);
-    Route::put('/update/{id}', [ListAplikasiController::class, 'update']);
-    Route::delete('/delete/{id}', [ListAplikasiController::class, 'destroy']);
-});
+Route::resource('aplikasi', App\Http\Controllers\API\ListAplikasiController::class);
 
-Route::prefix('token')->group(function(){
-    Route::get('/all', [TokenController::class, 'index']);
-    Route::post('/tambah', [TokenController::class, 'store']);
-});
+// Route::prefix('list')->group(function(){
+//     Route::get('/all', [ListAplikasiController::class, 'index']);
+//     Route::post('/tambah', [ListAplikasiController::class, 'store']);
+//     Route::get('/aplikasi/{id}', [ListAplikasiController::class, 'show']);
+//     Route::put('/update/{id}', [ListAplikasiController::class, 'update']);
+//     Route::delete('/delete/{id}', [ListAplikasiController::class, 'destroy']);
+// });
+
+// Route::prefix('token')->group(function(){
+//     Route::get('/all', [TokenController::class, 'index']);
+//     Route::post('/tambah', [TokenController::class, 'store']);
+// });

@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\API\ListAplikasiController;
+use App\Http\Controllers\API\ViewAplikasiController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -26,11 +26,11 @@ Route::get('admin/home', [HomeController::class, 'adminHome'])->name('admin.home
 Route::get('home', [HomeController::class, 'userHome'])->name('user.home');
 
 Route::prefix('list')->group(function(){
-    Route::get('/all', [ListAplikasiController::class, 'index']);
-    Route::post('/tambah', [ListAplikasiController::class, 'store']);
-    Route::get('/aplikasi/{id}', [ListAplikasiController::class, 'show']);
-    Route::put('/update/{id}', [ListAplikasiController::class, 'update']);
-    Route::delete('/delete/{id}', [ListAplikasiController::class, 'destroy']);
+    Route::get('/all', [ViewAplikasiController::class, 'index']);
+    Route::post('/tambah', [ViewAplikasiController::class, 'store']);
+    Route::get('/aplikasi/{id}', [ViewAplikasiController::class, 'show']);
+    Route::put('/update/{id}', [ViewAplikasiController::class, 'update']);
+    Route::delete('/delete/{id}', [ViewAplikasiController::class, 'destroy']);
 });
 
 Route::prefix('token')->group(function(){
