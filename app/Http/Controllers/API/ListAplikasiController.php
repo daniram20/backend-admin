@@ -7,7 +7,6 @@ use App\Http\Resources\ListAplikasiResource;
 use App\Models\ListAplikasi;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
-use Illuminate\Support\Facades\URL;
 use Illuminate\Support\Facades\Validator;
 
 class ListAplikasiController extends Controller
@@ -54,7 +53,7 @@ class ListAplikasiController extends Controller
         return response()->json(['Aplikasi fetched successfully.', new ListAplikasiResource($aplikasi)]);
     }
 
-    public function update(Request $request, ListAplikasi $listAplikasi)
+    public function update(Request $request, ListAplikasi $aplikasi)
    {
          $validator = Validator::make($request->all(), [
             'nama' => 'required|string|max:255',
@@ -74,23 +73,23 @@ class ListAplikasiController extends Controller
             $filename = 'aplikasi_' . date("Ymd_his") . '.' . $file->extension();
             Storage::putFileAs($destinationPath, $file, $filename);
 
-            Storage::delete('public/images/' . $listAplikasi->foto);
+            Storage::delete('public/images/' . $aplikasi->foto);
 
-            $listAplikasi->update([
+            $aplikasi->update([
                 'nama' => $request->nama,
                 'url' => $request->url,
                 'foto' => $filename,
                 'status' => $request->status,
             ]);
         } else {
-            $listAplikasi->update([
+            $aplikasi->update([
                 'nama' => $request->nama,
                 'url' => $request->url,
                 'status' => $request->status,
             ]);
         }
 
-        return response()->json(['Aplikasi updated successfully.', new ListAplikasiResource($listAplikasi)]);
+        return response()->json(['Aplikasi updated successfully.', new ListAplikasiResource($aplikasi)]);
 
    }
    
