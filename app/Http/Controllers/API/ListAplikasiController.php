@@ -93,11 +93,19 @@ class ListAplikasiController extends Controller
 
    }
    
-   public function destroy(ListAplikasi $listAplikasi)
+    public function destroy($id)
    {
-        $listAplikasi->delete();
-        Storage::delete('public/images/' . $listAplikasi->foto);
+        $listaplikasi = ListAplikasi::where('id', $id)->delete();
         
-        return response()->json(['Aplikasi deleted successfully.']);
+        if ($listaplikasi != null) {
+            return response()->json([
+                'message' => 'Data list aplikasi dihapus',
+                'data' => $listaplikasi
+            ]);
+        } else {
+            return response()->json([
+                'message' => 'Data tidak ditemukan',
+            ], 404);
+        }
    }
 }
