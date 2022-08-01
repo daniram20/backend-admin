@@ -23,7 +23,7 @@ class ListAplikasiController extends Controller
             'nama' => 'required|string|max:255',
             'url' => 'required|string',
             'foto' => 'required|mimes:jpeg,png,jpg,gif,svg|max:2048',
-            'status' => 'required|string'
+            'status' => 'required'
         ]);
 
         if($validator->fails()){
@@ -59,7 +59,7 @@ class ListAplikasiController extends Controller
             'nama' => 'required|string|max:255',
             'url' => 'required|string',
             'foto' => 'required|mimes:jpeg,png,jpg,gif,svg|max:2048',
-            'status' => 'required|string'
+            'status' => 'required'
         ]);
 
         if ($validator->fails()) {
