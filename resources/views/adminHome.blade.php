@@ -1,844 +1,1197 @@
 <!DOCTYPE html>
-<html lang="en">
 
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <link rel="apple-touch-icon" sizes="76x76" href="{{asset('img/apple-icon.png')}}">
-  <link rel="icon" type="image/png" href="{{asset('img/favicon.png')}}">
-  <title>
-    Argon Dashboard 2 by Creative Tim
-  </title>
-  <!--     Fonts and icons     -->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
-  <!-- Nucleo Icons -->
-  <link href="{{asset('css/nucleo-icons.css')}}" rel="stylesheet" />
-  <link href="{{asset('css/nucleo-svg.css')}}" rel="stylesheet" />
-  <!-- Font Awesome Icons -->
-  <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
-  <link href="{{asset('css/nucleo-svg.css')}}" rel="stylesheet" />
-  <!-- CSS Files -->
-  <link id="pagestyle" href="{{asset('css/argon-dashboard.css?v=2.0.4')}}" rel="stylesheet" />
-</head>
+<html
+  lang="en"
+  class="light-style layout-menu-fixed"
+  dir="ltr"
+  data-theme="theme-default"
+  {{-- data-assets-path="{{asset('" --}}
+  data-template="vertical-menu-template-free"
+>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"
+    />
 
-<body class="g-sidenav-show   bg-gray-100">
-  <div class="min-height-300 bg-primary position-absolute w-100"></div>
-  <aside class="sidenav bg-white navbar navbar-vertical navbar-expand-xs border-0 border-radius-xl my-3 fixed-start ms-4 " id="sidenav-main">
-    <div class="sidenav-header">
-      <i class="fas fa-times p-3 cursor-pointer text-secondary opacity-5 position-absolute end-0 top-0 d-none d-xl-none" aria-hidden="true" id="iconSidenav"></i>
-      <a class="navbar-brand m-0" href=" https://demos.creative-tim.com/argon-dashboard/pages/dashboard.html " target="_blank">
-        <img src="{{asset('img/logo-ct-dark.png')}}" class="navbar-brand-img h-100" alt="main_logo">
-        <span class="ms-1 font-weight-bold">Argon Dashboard 2</span>
-      </a>
-    </div>
-    <hr class="horizontal dark mt-0">
-    <div class="collapse navbar-collapse  w-auto " id="sidenav-collapse-main">
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link active" href="{{url('/page/dashboard')}}">
-            <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
-              <i class="ni ni-tv-2 text-primary text-sm opacity-10"></i>
-            </div>
-            <span class="nav-link-text ms-1">Dashboard</span>
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link " href="../pages/tables.html">
-            <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
-              <i class="ni ni-calendar-grid-58 text-warning text-sm opacity-10"></i>
-            </div>
-            <span class="nav-link-text ms-1">Tables</span>
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link " href="../pages/billing.html">
-            <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
-              <i class="ni ni-credit-card text-success text-sm opacity-10"></i>
-            </div>
-            <span class="nav-link-text ms-1">Billing</span>
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link " href="../pages/virtual-reality.html">
-            <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
-              <i class="ni ni-app text-info text-sm opacity-10"></i>
-            </div>
-            <span class="nav-link-text ms-1">Virtual Reality</span>
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link " href="../pages/rtl.html">
-            <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
-              <i class="ni ni-world-2 text-danger text-sm opacity-10"></i>
-            </div>
-            <span class="nav-link-text ms-1">RTL</span>
-          </a>
-        </li>
-        <li class="nav-item mt-3">
-          <h6 class="ps-4 ms-2 text-uppercase text-xs font-weight-bolder opacity-6">Account pages</h6>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link " href="../pages/profile.html">
-            <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
-              <i class="ni ni-single-02 text-dark text-sm opacity-10"></i>
-            </div>
-            <span class="nav-link-text ms-1">Profile</span>
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link " href="../pages/sign-in.html">
-            <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
-              <i class="ni ni-single-copy-04 text-warning text-sm opacity-10"></i>
-            </div>
-            <span class="nav-link-text ms-1">Sign In</span>
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link " href="../pages/sign-up.html">
-            <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
-              <i class="ni ni-collection text-info text-sm opacity-10"></i>
-            </div>
-            <span class="nav-link-text ms-1">Sign Up</span>
-          </a>
-        </li>
-      </ul>
-    </div>
-  </aside>
-  <main class="main-content position-relative border-radius-lg ">
-    <!-- Navbar -->
-    <nav class="navbar navbar-main navbar-expand-lg px-0 mx-4 shadow-none border-radius-xl " id="navbarBlur" data-scroll="false">
-      <div class="container-fluid py-1 px-3">
-        <nav aria-label="breadcrumb">
-          <ol class="breadcrumb bg-transparent mb-0 pb-0 pt-1 px-0 me-sm-6 me-5">
-            <li class="breadcrumb-item text-sm"><a class="opacity-5 text-white" href="javascript:;">Pages</a></li>
-            <li class="breadcrumb-item text-sm text-white active" aria-current="page">Dashboard</li>
-          </ol>
-          <h6 class="font-weight-bolder text-white mb-0">Dashboard</h6>
-        </nav>
-        <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
-          <div class="ms-md-auto pe-md-3 d-flex align-items-center">
-            <div class="input-group">
-              <span class="input-group-text text-body"><i class="fas fa-search" aria-hidden="true"></i></span>
-              <input type="text" class="form-control" placeholder="Type here...">
-            </div>
-          </div>
-          <div class="pe-md-3 d-flex align-items-center">
-            <ul class="navbar-nav ms-auto">
-                        <!-- Authentication Links -->
-                        @guest
-                            @if (Route::has('login'))
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
-                                </li>
-                            @endif
+    <title>Dashboard</title>
 
-                            @if (Route::has('register'))
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
-                                </li>
-                            @endif
-                        @else
-                            <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="btn bg-gradient-light dropdown-toggle mt-3" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->name }}
-                                </a>
+    <meta name="description" content="" />
 
-                                <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
-                                    </a>
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="{{asset('img/favicon/favicon.ico')}}" />
 
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                        @csrf
-                                    </form>
-                                </div>
-                            </li>
-                        @endguest
-                    </ul>
-          </div>
-          <ul class="navbar-nav  justify-content-end">
-            <li class="nav-item d-flex align-items-center">
-              {{-- <a href="{{ route('logout.logout') }}" class="nav-link text-white font-weight-bold px-0">
-                <i class="fa fa-user me-sm-1"></i>
-                <span class="d-sm-inline d-none">Log Out</span>
-              </a> --}}
-            </li>
-            <li class="nav-item d-xl-none ps-3 d-flex align-items-center">
-              <a href="javascript:;" class="nav-link text-white p-0" id="iconNavbarSidenav">
-                <div class="sidenav-toggler-inner">
-                  <i class="sidenav-toggler-line bg-white"></i>
-                  <i class="sidenav-toggler-line bg-white"></i>
-                  <i class="sidenav-toggler-line bg-white"></i>
-                </div>
-              </a>
-            </li>
-            <li class="nav-item px-3 d-flex align-items-center">
-              <a href="javascript:;" class="nav-link text-white p-0">
-                <i class="fa fa-cog fixed-plugin-button-nav cursor-pointer"></i>
-              </a>
-            </li>
-            <li class="nav-item dropdown pe-2 d-flex align-items-center">
-              <a href="javascript:;" class="nav-link text-white p-0" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
-                <i class="fa fa-bell cursor-pointer"></i>
-              </a>
-              <ul class="dropdown-menu  dropdown-menu-end  px-2 py-3 me-sm-n4" aria-labelledby="dropdownMenuButton">
-                <li class="mb-2">
-                  <a class="dropdown-item border-radius-md" href="javascript:;">
-                    <div class="d-flex py-1">
-                      <div class="my-auto">
-                        <img src="{{asset('img/team-2.jpg')}}" class="avatar avatar-sm  me-3 ">
-                      </div>
-                      <div class="d-flex flex-column justify-content-center">
-                        <h6 class="text-sm font-weight-normal mb-1">
-                          <span class="font-weight-bold">New message</span> from Laur
-                        </h6>
-                        <p class="text-xs text-secondary mb-0">
-                          <i class="fa fa-clock me-1"></i>
-                          13 minutes ago
-                        </p>
-                      </div>
-                    </div>
-                  </a>
-                </li>
-                <li class="mb-2">
-                  <a class="dropdown-item border-radius-md" href="javascript:;">
-                    <div class="d-flex py-1">
-                      <div class="my-auto">
-                        <img src="{{asset('img/small-logos/logo-spotify.svg')}}" class="avatar avatar-sm bg-gradient-dark  me-3 ">
-                      </div>
-                      <div class="d-flex flex-column justify-content-center">
-                        <h6 class="text-sm font-weight-normal mb-1">
-                          <span class="font-weight-bold">New album</span> by Travis Scott
-                        </h6>
-                        <p class="text-xs text-secondary mb-0">
-                          <i class="fa fa-clock me-1"></i>
-                          1 day
-                        </p>
-                      </div>
-                    </div>
-                  </a>
-                </li>
-                <li>
-                  <a class="dropdown-item border-radius-md" href="javascript:;">
-                    <div class="d-flex py-1">
-                      <div class="avatar avatar-sm bg-gradient-secondary  me-3  my-auto">
-                        <svg width="12px" height="12px" viewBox="0 0 43 36" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                          <title>credit-card</title>
-                          <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                            <g transform="translate(-2169.000000, -745.000000)" fill="#FFFFFF" fill-rule="nonzero">
-                              <g transform="translate(1716.000000, 291.000000)">
-                                <g transform="translate(453.000000, 454.000000)">
-                                  <path class="color-background" d="M43,10.7482083 L43,3.58333333 C43,1.60354167 41.3964583,0 39.4166667,0 L3.58333333,0 C1.60354167,0 0,1.60354167 0,3.58333333 L0,10.7482083 L43,10.7482083 Z" opacity="0.593633743"></path>
-                                  <path class="color-background" d="M0,16.125 L0,32.25 C0,34.2297917 1.60354167,35.8333333 3.58333333,35.8333333 L39.4166667,35.8333333 C41.3964583,35.8333333 43,34.2297917 43,32.25 L43,16.125 L0,16.125 Z M19.7083333,26.875 L7.16666667,26.875 L7.16666667,23.2916667 L19.7083333,23.2916667 L19.7083333,26.875 Z M35.8333333,26.875 L28.6666667,26.875 L28.6666667,23.2916667 L35.8333333,23.2916667 L35.8333333,26.875 Z"></path>
-                                </g>
-                              </g>
-                            </g>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Icons. Uncomment required icon fonts -->
+    <link rel="stylesheet" href="{{asset('vendor/fonts/boxicons.css')}}" />
+
+    <!-- Core CSS -->
+    <link rel="stylesheet" href="{{asset('vendor/css/core.css')}}" class="template-customizer-core-css" />
+    <link rel="stylesheet" href="{{asset('vendor/css/theme-default.css')}}" class="template-customizer-theme-css" />
+    <link rel="stylesheet" href="{{asset('css/demo.css')}}" />
+
+    <!-- Vendors CSS -->
+    <link rel="stylesheet" href="{{asset('vendor/libs/perfect-scrollbar/perfect-scrollbar.css')}}" />
+
+    <link rel="stylesheet" href="{{asset('vendor/libs/apex-charts/apex-charts.css')}}" />
+
+    <!-- Page CSS -->
+
+    <!-- Helpers -->
+    <script src="{{asset('vendor/js/helpers.js')}}"></script>
+
+    <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
+    <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
+    <script src="{{asset('js/config.js')}}"></script>
+  </head>
+
+  <body>
+    <!-- Layout wrapper -->
+    <div class="layout-wrapper layout-content-navbar">
+      <div class="layout-container">
+        <!-- Menu -->
+
+        <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
+          <div class="app-brand demo">
+            <a href="index.html" class="app-brand-link">
+              <span class="app-brand-logo demo">
+                <svg
+                  width="25"
+                  viewBox="0 0 25 42"
+                  version="1.1"
+                  xmlns="http://www.w3.org/2000/svg"
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                >
+                  <defs>
+                    <path
+                      d="M13.7918663,0.358365126 L3.39788168,7.44174259 C0.566865006,9.69408886 -0.379795268,12.4788597 0.557900856,15.7960551 C0.68998853,16.2305145 1.09562888,17.7872135 3.12357076,19.2293357 C3.8146334,19.7207684 5.32369333,20.3834223 7.65075054,21.2172976 L7.59773219,21.2525164 L2.63468769,24.5493413 C0.445452254,26.3002124 0.0884951797,28.5083815 1.56381646,31.1738486 C2.83770406,32.8170431 5.20850219,33.2640127 7.09180128,32.5391577 C8.347334,32.0559211 11.4559176,30.0011079 16.4175519,26.3747182 C18.0338572,24.4997857 18.6973423,22.4544883 18.4080071,20.2388261 C17.963753,17.5346866 16.1776345,15.5799961 13.0496516,14.3747546 L10.9194936,13.4715819 L18.6192054,7.984237 L13.7918663,0.358365126 Z"
+                      id="path-1"
+                    ></path>
+                    <path
+                      d="M5.47320593,6.00457225 C4.05321814,8.216144 4.36334763,10.0722806 6.40359441,11.5729822 C8.61520715,12.571656 10.0999176,13.2171421 10.8577257,13.5094407 L15.5088241,14.433041 L18.6192054,7.984237 C15.5364148,3.11535317 13.9273018,0.573395879 13.7918663,0.358365126 C13.5790555,0.511491653 10.8061687,2.3935607 5.47320593,6.00457225 Z"
+                      id="path-3"
+                    ></path>
+                    <path
+                      d="M7.50063644,21.2294429 L12.3234468,23.3159332 C14.1688022,24.7579751 14.397098,26.4880487 13.008334,28.506154 C11.6195701,30.5242593 10.3099883,31.790241 9.07958868,32.3040991 C5.78142938,33.4346997 4.13234973,34 4.13234973,34 C4.13234973,34 2.75489982,33.0538207 2.37032616e-14,31.1614621 C-0.55822714,27.8186216 -0.55822714,26.0572515 -4.05231404e-15,25.8773518 C0.83734071,25.6075023 2.77988457,22.8248993 3.3049379,22.52991 C3.65497346,22.3332504 5.05353963,21.8997614 7.50063644,21.2294429 Z"
+                      id="path-4"
+                    ></path>
+                    <path
+                      d="M20.6,7.13333333 L25.6,13.8 C26.2627417,14.6836556 26.0836556,15.9372583 25.2,16.6 C24.8538077,16.8596443 24.4327404,17 24,17 L14,17 C12.8954305,17 12,16.1045695 12,15 C12,14.5672596 12.1403557,14.1461923 12.4,13.8 L17.4,7.13333333 C18.0627417,6.24967773 19.3163444,6.07059163 20.2,6.73333333 C20.3516113,6.84704183 20.4862915,6.981722 20.6,7.13333333 Z"
+                      id="path-5"
+                    ></path>
+                  </defs>
+                  <g id="g-app-brand" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                    <g id="Brand-Logo" transform="translate(-27.000000, -15.000000)">
+                      <g id="Icon" transform="translate(27.000000, 15.000000)">
+                        <g id="Mask" transform="translate(0.000000, 8.000000)">
+                          <mask id="mask-2" fill="white">
+                            <use xlink:href="#path-1"></use>
+                          </mask>
+                          <use fill="#696cff" xlink:href="#path-1"></use>
+                          <g id="Path-3" mask="url(#mask-2)">
+                            <use fill="#696cff" xlink:href="#path-3"></use>
+                            <use fill-opacity="0.2" fill="#FFFFFF" xlink:href="#path-3"></use>
                           </g>
-                        </svg>
-                      </div>
-                      <div class="d-flex flex-column justify-content-center">
-                        <h6 class="text-sm font-weight-normal mb-1">
-                          Payment successfully completed
-                        </h6>
-                        <p class="text-xs text-secondary mb-0">
-                          <i class="fa fa-clock me-1"></i>
-                          2 days
-                        </p>
-                      </div>
-                    </div>
+                          <g id="Path-4" mask="url(#mask-2)">
+                            <use fill="#696cff" xlink:href="#path-4"></use>
+                            <use fill-opacity="0.2" fill="#FFFFFF" xlink:href="#path-4"></use>
+                          </g>
+                        </g>
+                        <g
+                          id="Triangle"
+                          transform="translate(19.000000, 11.000000) rotate(-300.000000) translate(-19.000000, -11.000000) "
+                        >
+                          <use fill="#696cff" xlink:href="#path-5"></use>
+                          <use fill-opacity="0.2" fill="#FFFFFF" xlink:href="#path-5"></use>
+                        </g>
+                      </g>
+                    </g>
+                  </g>
+                </svg>
+              </span>
+              <span class="app-brand-text demo menu-text fw-bolder ms-2">Sneat</span>
+            </a>
+
+            <a href="javascript:void(0);" class="layout-menu-toggle menu-link text-large ms-auto d-block d-xl-none">
+              <i class="bx bx-chevron-left bx-sm align-middle"></i>
+            </a>
+          </div>
+
+          <div class="menu-inner-shadow"></div>
+
+          <ul class="menu-inner py-1">
+            <!-- Dashboard -->
+            <li class="menu-item active">
+              <a href="{{url('/admin/home')}}" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-home-circle"></i>
+                <div data-i18n="Analytics">Dashboard</div>
+              </a>
+            </li>
+
+            <!-- Layouts -->
+            <li class="menu-item">
+              <a href="javascript:void(0);" class="menu-link menu-toggle">
+                <i class="menu-icon tf-icons bx bx-layout"></i>
+                <div data-i18n="Layouts">Layouts</div>
+              </a>
+
+              <ul class="menu-sub">
+                <li class="menu-item">
+                  <a href="layouts-without-menu.html" class="menu-link">
+                    <div data-i18n="Without menu">Without menu</div>
+                  </a>
+                </li>
+                <li class="menu-item">
+                  <a href="layouts-without-navbar.html" class="menu-link">
+                    <div data-i18n="Without navbar">Without navbar</div>
+                  </a>
+                </li>
+                <li class="menu-item">
+                  <a href="layouts-container.html" class="menu-link">
+                    <div data-i18n="Container">Container</div>
+                  </a>
+                </li>
+                <li class="menu-item">
+                  <a href="layouts-fluid.html" class="menu-link">
+                    <div data-i18n="Fluid">Fluid</div>
+                  </a>
+                </li>
+                <li class="menu-item">
+                  <a href="layouts-blank.html" class="menu-link">
+                    <div data-i18n="Blank">Blank</div>
                   </a>
                 </li>
               </ul>
+            </li>
+
+            <li class="menu-header small text-uppercase">
+              <span class="menu-header-text">Pages</span>
+            </li>
+            <li class="menu-item">
+              <a href="javascript:void(0);" class="menu-link menu-toggle">
+                <i class="menu-icon tf-icons bx bx-dock-top"></i>
+                <div data-i18n="Account Settings">Account Settings</div>
+              </a>
+              <ul class="menu-sub">
+                <li class="menu-item">
+                  <a href="pages-account-settings-account.html" class="menu-link">
+                    <div data-i18n="Account">Account</div>
+                  </a>
+                </li>
+                <li class="menu-item">
+                  <a href="pages-account-settings-notifications.html" class="menu-link">
+                    <div data-i18n="Notifications">Notifications</div>
+                  </a>
+                </li>
+                <li class="menu-item">
+                  <a href="pages-account-settings-connections.html" class="menu-link">
+                    <div data-i18n="Connections">Connections</div>
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li class="menu-item">
+              <a href="javascript:void(0);" class="menu-link menu-toggle">
+                <i class="menu-icon tf-icons bx bx-lock-open-alt"></i>
+                <div data-i18n="Authentications">Authentications</div>
+              </a>
+              <ul class="menu-sub">
+                <li class="menu-item">
+                  <a href="auth-login-basic.html" class="menu-link" target="_blank">
+                    <div data-i18n="Basic">Login</div>
+                  </a>
+                </li>
+                <li class="menu-item">
+                  <a href="auth-register-basic.html" class="menu-link" target="_blank">
+                    <div data-i18n="Basic">Register</div>
+                  </a>
+                </li>
+                <li class="menu-item">
+                  <a href="auth-forgot-password-basic.html" class="menu-link" target="_blank">
+                    <div data-i18n="Basic">Forgot Password</div>
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li class="menu-item">
+              <a href="javascript:void(0);" class="menu-link menu-toggle">
+                <i class="menu-icon tf-icons bx bx-cube-alt"></i>
+                <div data-i18n="Misc">Misc</div>
+              </a>
+              <ul class="menu-sub">
+                <li class="menu-item">
+                  <a href="pages-misc-error.html" class="menu-link">
+                    <div data-i18n="Error">Error</div>
+                  </a>
+                </li>
+                <li class="menu-item">
+                  <a href="pages-misc-under-maintenance.html" class="menu-link">
+                    <div data-i18n="Under Maintenance">Under Maintenance</div>
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <!-- Components -->
+            <li class="menu-header small text-uppercase"><span class="menu-header-text">Components</span></li>
+            <!-- Cards -->
+            <li class="menu-item">
+              <a href="cards-basic.html" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-collection"></i>
+                <div data-i18n="Basic">Cards</div>
+              </a>
+            </li>
+            <!-- User interface -->
+            <li class="menu-item">
+              <a href="javascript:void(0)" class="menu-link menu-toggle">
+                <i class="menu-icon tf-icons bx bx-box"></i>
+                <div data-i18n="User interface">User interface</div>
+              </a>
+              <ul class="menu-sub">
+                <li class="menu-item">
+                  <a href="ui-accordion.html" class="menu-link">
+                    <div data-i18n="Accordion">Accordion</div>
+                  </a>
+                </li>
+                <li class="menu-item">
+                  <a href="ui-alerts.html" class="menu-link">
+                    <div data-i18n="Alerts">Alerts</div>
+                  </a>
+                </li>
+                <li class="menu-item">
+                  <a href="ui-badges.html" class="menu-link">
+                    <div data-i18n="Badges">Badges</div>
+                  </a>
+                </li>
+                <li class="menu-item">
+                  <a href="ui-buttons.html" class="menu-link">
+                    <div data-i18n="Buttons">Buttons</div>
+                  </a>
+                </li>
+                <li class="menu-item">
+                  <a href="ui-carousel.html" class="menu-link">
+                    <div data-i18n="Carousel">Carousel</div>
+                  </a>
+                </li>
+                <li class="menu-item">
+                  <a href="ui-collapse.html" class="menu-link">
+                    <div data-i18n="Collapse">Collapse</div>
+                  </a>
+                </li>
+                <li class="menu-item">
+                  <a href="ui-dropdowns.html" class="menu-link">
+                    <div data-i18n="Dropdowns">Dropdowns</div>
+                  </a>
+                </li>
+                <li class="menu-item">
+                  <a href="ui-footer.html" class="menu-link">
+                    <div data-i18n="Footer">Footer</div>
+                  </a>
+                </li>
+                <li class="menu-item">
+                  <a href="ui-list-groups.html" class="menu-link">
+                    <div data-i18n="List Groups">List groups</div>
+                  </a>
+                </li>
+                <li class="menu-item">
+                  <a href="ui-modals.html" class="menu-link">
+                    <div data-i18n="Modals">Modals</div>
+                  </a>
+                </li>
+                <li class="menu-item">
+                  <a href="ui-navbar.html" class="menu-link">
+                    <div data-i18n="Navbar">Navbar</div>
+                  </a>
+                </li>
+                <li class="menu-item">
+                  <a href="ui-offcanvas.html" class="menu-link">
+                    <div data-i18n="Offcanvas">Offcanvas</div>
+                  </a>
+                </li>
+                <li class="menu-item">
+                  <a href="ui-pagination-breadcrumbs.html" class="menu-link">
+                    <div data-i18n="Pagination &amp; Breadcrumbs">Pagination &amp; Breadcrumbs</div>
+                  </a>
+                </li>
+                <li class="menu-item">
+                  <a href="ui-progress.html" class="menu-link">
+                    <div data-i18n="Progress">Progress</div>
+                  </a>
+                </li>
+                <li class="menu-item">
+                  <a href="ui-spinners.html" class="menu-link">
+                    <div data-i18n="Spinners">Spinners</div>
+                  </a>
+                </li>
+                <li class="menu-item">
+                  <a href="ui-tabs-pills.html" class="menu-link">
+                    <div data-i18n="Tabs &amp; Pills">Tabs &amp; Pills</div>
+                  </a>
+                </li>
+                <li class="menu-item">
+                  <a href="ui-toasts.html" class="menu-link">
+                    <div data-i18n="Toasts">Toasts</div>
+                  </a>
+                </li>
+                <li class="menu-item">
+                  <a href="ui-tooltips-popovers.html" class="menu-link">
+                    <div data-i18n="Tooltips & Popovers">Tooltips &amp; popovers</div>
+                  </a>
+                </li>
+                <li class="menu-item">
+                  <a href="ui-typography.html" class="menu-link">
+                    <div data-i18n="Typography">Typography</div>
+                  </a>
+                </li>
+              </ul>
+            </li>
+
+            <!-- Extended components -->
+            <li class="menu-item">
+              <a href="javascript:void(0)" class="menu-link menu-toggle">
+                <i class="menu-icon tf-icons bx bx-copy"></i>
+                <div data-i18n="Extended UI">Extended UI</div>
+              </a>
+              <ul class="menu-sub">
+                <li class="menu-item">
+                  <a href="extended-ui-perfect-scrollbar.html" class="menu-link">
+                    <div data-i18n="Perfect Scrollbar">Perfect scrollbar</div>
+                  </a>
+                </li>
+                <li class="menu-item">
+                  <a href="extended-ui-text-divider.html" class="menu-link">
+                    <div data-i18n="Text Divider">Text Divider</div>
+                  </a>
+                </li>
+              </ul>
+            </li>
+
+            <li class="menu-item">
+              <a href="icons-boxicons.html" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-crown"></i>
+                <div data-i18n="Boxicons">Boxicons</div>
+              </a>
+            </li>
+
+            <!-- Forms & Tables -->
+            <li class="menu-header small text-uppercase"><span class="menu-header-text">Forms &amp; Tables</span></li>
+            <!-- Forms -->
+            <li class="menu-item">
+              <a href="javascript:void(0);" class="menu-link menu-toggle">
+                <i class="menu-icon tf-icons bx bx-detail"></i>
+                <div data-i18n="Form Elements">Form Elements</div>
+              </a>
+              <ul class="menu-sub">
+                <li class="menu-item">
+                  <a href="forms-basic-inputs.html" class="menu-link">
+                    <div data-i18n="Basic Inputs">Basic Inputs</div>
+                  </a>
+                </li>
+                <li class="menu-item">
+                  <a href="forms-input-groups.html" class="menu-link">
+                    <div data-i18n="Input groups">Input groups</div>
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li class="menu-item">
+              <a href="javascript:void(0);" class="menu-link menu-toggle">
+                <i class="menu-icon tf-icons bx bx-detail"></i>
+                <div data-i18n="Form Layouts">Form Layouts</div>
+              </a>
+              <ul class="menu-sub">
+                <li class="menu-item">
+                  <a href="form-layouts-vertical.html" class="menu-link">
+                    <div data-i18n="Vertical Form">Vertical Form</div>
+                  </a>
+                </li>
+                <li class="menu-item">
+                  <a href="form-layouts-horizontal.html" class="menu-link">
+                    <div data-i18n="Horizontal Form">Horizontal Form</div>
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <!-- Tables -->
+            <li class="menu-item">
+              <a href="tables-basic.html" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-table"></i>
+                <div data-i18n="Tables">Tables</div>
+              </a>
+            </li>
+            <!-- Misc -->
+            <li class="menu-header small text-uppercase"><span class="menu-header-text">Misc</span></li>
+            <li class="menu-item">
+              <a
+                href="https://github.com/themeselection/sneat-html-admin-template-free/issues"
+                target="_blank"
+                class="menu-link"
+              >
+                <i class="menu-icon tf-icons bx bx-support"></i>
+                <div data-i18n="Support">Support</div>
+              </a>
+            </li>
+            <li class="menu-item">
+              <a
+                href="https://themeselection.com/demo/sneat-bootstrap-html-admin-template/documentation/"
+                target="_blank"
+                class="menu-link"
+              >
+                <i class="menu-icon tf-icons bx bx-file"></i>
+                <div data-i18n="Documentation">Documentation</div>
+              </a>
             </li>
           </ul>
-        </div>
-      </div>
-    </nav>
-    <!-- End Navbar -->
-    <div class="container-fluid py-4">
-      <div class="row">
-        <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
-          <div class="card">
-            <div class="card-body p-3">
-              <div class="row">
-                <div class="col-8">
-                  <div class="numbers">
-                    <p class="text-sm mb-0 text-uppercase font-weight-bold">Today's Money</p>
-                    <h5 class="font-weight-bolder">
-                      $53,000
-                    </h5>
-                    <p class="mb-0">
-                      <span class="text-success text-sm font-weight-bolder">+55%</span>
-                      since yesterday
-                    </p>
-                  </div>
-                </div>
-                <div class="col-4 text-end">
-                  <div class="icon icon-shape bg-gradient-primary shadow-primary text-center rounded-circle">
-                    <i class="ni ni-money-coins text-lg opacity-10" aria-hidden="true"></i>
-                  </div>
+        </aside>
+        <!-- / Menu -->
+
+        <!-- Layout container -->
+        <div class="layout-page">
+          <!-- Navbar -->
+
+          <nav
+            class="layout-navbar container-xxl navbar navbar-expand-xl navbar-detached align-items-center bg-navbar-theme"
+            id="layout-navbar"
+          >
+            <div class="layout-menu-toggle navbar-nav align-items-xl-center me-3 me-xl-0 d-xl-none">
+              <a class="nav-item nav-link px-0 me-xl-4" href="javascript:void(0)">
+                <i class="bx bx-menu bx-sm"></i>
+              </a>
+            </div>
+
+            <div class="navbar-nav-right d-flex align-items-center" id="navbar-collapse">
+              <!-- Search -->
+              <div class="navbar-nav align-items-center">
+                <div class="nav-item d-flex align-items-center">
+                  <i class="bx bx-search fs-4 lh-0"></i>
+                  <input
+                    type="text"
+                    class="form-control border-0 shadow-none"
+                    placeholder="Search..."
+                    aria-label="Search..."
+                  />
                 </div>
               </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
-          <div class="card">
-            <div class="card-body p-3">
-              <div class="row">
-                <div class="col-8">
-                  <div class="numbers">
-                    <p class="text-sm mb-0 text-uppercase font-weight-bold">Today's Users</p>
-                    <h5 class="font-weight-bolder">
-                      2,300
-                    </h5>
-                    <p class="mb-0">
-                      <span class="text-success text-sm font-weight-bolder">+3%</span>
-                      since last week
-                    </p>
-                  </div>
-                </div>
-                <div class="col-4 text-end">
-                  <div class="icon icon-shape bg-gradient-danger shadow-danger text-center rounded-circle">
-                    <i class="ni ni-world text-lg opacity-10" aria-hidden="true"></i>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
-          <div class="card">
-            <div class="card-body p-3">
-              <div class="row">
-                <div class="col-8">
-                  <div class="numbers">
-                    <p class="text-sm mb-0 text-uppercase font-weight-bold">New Clients</p>
-                    <h5 class="font-weight-bolder">
-                      +3,462
-                    </h5>
-                    <p class="mb-0">
-                      <span class="text-danger text-sm font-weight-bolder">-2%</span>
-                      since last quarter
-                    </p>
-                  </div>
-                </div>
-                <div class="col-4 text-end">
-                  <div class="icon icon-shape bg-gradient-success shadow-success text-center rounded-circle">
-                    <i class="ni ni-paper-diploma text-lg opacity-10" aria-hidden="true"></i>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-xl-3 col-sm-6">
-          <div class="card">
-            <div class="card-body p-3">
-              <div class="row">
-                <div class="col-8">
-                  <div class="numbers">
-                    <p class="text-sm mb-0 text-uppercase font-weight-bold">Sales</p>
-                    <h5 class="font-weight-bolder">
-                      $103,430
-                    </h5>
-                    <p class="mb-0">
-                      <span class="text-success text-sm font-weight-bolder">+5%</span> than last month
-                    </p>
-                  </div>
-                </div>
-                <div class="col-4 text-end">
-                  <div class="icon icon-shape bg-gradient-warning shadow-warning text-center rounded-circle">
-                    <i class="ni ni-cart text-lg opacity-10" aria-hidden="true"></i>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="row mt-4">
-        <div class="col-lg-7 mb-lg-0 mb-4">
-          <div class="card z-index-2 h-100">
-            <div class="card-header pb-0 pt-3 bg-transparent">
-              <h6 class="text-capitalize">Sales overview</h6>
-              <p class="text-sm mb-0">
-                <i class="fa fa-arrow-up text-success"></i>
-                <span class="font-weight-bold">4% more</span> in 2021
-              </p>
-            </div>
-            <div class="card-body p-3">
-              <div class="chart">
-                <canvas id="chart-line" class="chart-canvas" height="300"></canvas>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-5">
-          <div class="card card-carousel overflow-hidden h-100 p-0">
-            <div id="carouselExampleCaptions" class="carousel slide h-100" data-bs-ride="carousel">
-              <div class="carousel-inner border-radius-lg h-100">
-                <div class="carousel-item h-100 active" style="background-image: url('{{asset('img/carousel-1.jpg')}}');
-      background-size: cover;">
-                  <div class="carousel-caption d-none d-md-block bottom-0 text-start start-0 ms-5">
-                    <div class="icon icon-shape icon-sm bg-white text-center border-radius-md mb-3">
-                      <i class="ni ni-camera-compact text-dark opacity-10"></i>
-                    </div>
-                    <h5 class="text-white mb-1">Get started with Argon</h5>
-                    <p>There’s nothing I really wanted to do in life that I wasn’t able to get good at.</p>
-                  </div>
-                </div>
-                <div class="carousel-item h-100" style="background-image: url('{{asset('img/carousel-2.jpg')}}');
-      background-size: cover;">
-                  <div class="carousel-caption d-none d-md-block bottom-0 text-start start-0 ms-5">
-                    <div class="icon icon-shape icon-sm bg-white text-center border-radius-md mb-3">
-                      <i class="ni ni-bulb-61 text-dark opacity-10"></i>
-                    </div>
-                    <h5 class="text-white mb-1">Faster way to create web pages</h5>
-                    <p>That’s my skill. I’m not really specifically talented at anything except for the ability to learn.</p>
-                  </div>
-                </div>
-                <div class="carousel-item h-100" style="background-image: url('{{asset('img/carousel-3.jpg')}}');
-      background-size: cover;">
-                  <div class="carousel-caption d-none d-md-block bottom-0 text-start start-0 ms-5">
-                    <div class="icon icon-shape icon-sm bg-white text-center border-radius-md mb-3">
-                      <i class="ni ni-trophy text-dark opacity-10"></i>
-                    </div>
-                    <h5 class="text-white mb-1">Share with us your design tips!</h5>
-                    <p>Don’t be afraid to be wrong because you can’t learn anything from a compliment.</p>
-                  </div>
-                </div>
-              </div>
-              <button class="carousel-control-prev w-5 me-3" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-              </button>
-              <button class="carousel-control-next w-5 me-3" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="row mt-4">
-        <div class="col-lg-7 mb-lg-0 mb-4">
-          <div class="card ">
-            <div class="card-header pb-0 p-3">
-              <div class="d-flex justify-content-between">
-                <h6 class="mb-2">Sales by Country</h6>
-              </div>
-            </div>
-            <div class="table-responsive">
-              <table class="table align-items-center ">
-                <tbody>
-                  <tr>
-                    <td class="w-30">
-                      <div class="d-flex px-2 py-1 align-items-center">
-                        <div>
-                          <img src="{{asset('img/icons/flags/US.png')}}" alt="Country flag">
-                        </div>
-                        <div class="ms-4">
-                          <p class="text-xs font-weight-bold mb-0">Country:</p>
-                          <h6 class="text-sm mb-0">United States</h6>
-                        </div>
-                      </div>
-                    </td>
-                    <td>
-                      <div class="text-center">
-                        <p class="text-xs font-weight-bold mb-0">Sales:</p>
-                        <h6 class="text-sm mb-0">2500</h6>
-                      </div>
-                    </td>
-                    <td>
-                      <div class="text-center">
-                        <p class="text-xs font-weight-bold mb-0">Value:</p>
-                        <h6 class="text-sm mb-0">$230,900</h6>
-                      </div>
-                    </td>
-                    <td class="align-middle text-sm">
-                      <div class="col text-center">
-                        <p class="text-xs font-weight-bold mb-0">Bounce:</p>
-                        <h6 class="text-sm mb-0">29.9%</h6>
-                      </div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td class="w-30">
-                      <div class="d-flex px-2 py-1 align-items-center">
-                        <div>
-                          <img src="{{asset('img/icons/flags/DE.png')}}" alt="Country flag">
-                        </div>
-                        <div class="ms-4">
-                          <p class="text-xs font-weight-bold mb-0">Country:</p>
-                          <h6 class="text-sm mb-0">Germany</h6>
-                        </div>
-                      </div>
-                    </td>
-                    <td>
-                      <div class="text-center">
-                        <p class="text-xs font-weight-bold mb-0">Sales:</p>
-                        <h6 class="text-sm mb-0">3.900</h6>
-                      </div>
-                    </td>
-                    <td>
-                      <div class="text-center">
-                        <p class="text-xs font-weight-bold mb-0">Value:</p>
-                        <h6 class="text-sm mb-0">$440,000</h6>
-                      </div>
-                    </td>
-                    <td class="align-middle text-sm">
-                      <div class="col text-center">
-                        <p class="text-xs font-weight-bold mb-0">Bounce:</p>
-                        <h6 class="text-sm mb-0">40.22%</h6>
-                      </div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td class="w-30">
-                      <div class="d-flex px-2 py-1 align-items-center">
-                        <div>
-                          <img src="{{asset('img/icons/flags/GB.png')}}" alt="Country flag">
-                        </div>
-                        <div class="ms-4">
-                          <p class="text-xs font-weight-bold mb-0">Country:</p>
-                          <h6 class="text-sm mb-0">Great Britain</h6>
-                        </div>
-                      </div>
-                    </td>
-                    <td>
-                      <div class="text-center">
-                        <p class="text-xs font-weight-bold mb-0">Sales:</p>
-                        <h6 class="text-sm mb-0">1.400</h6>
-                      </div>
-                    </td>
-                    <td>
-                      <div class="text-center">
-                        <p class="text-xs font-weight-bold mb-0">Value:</p>
-                        <h6 class="text-sm mb-0">$190,700</h6>
-                      </div>
-                    </td>
-                    <td class="align-middle text-sm">
-                      <div class="col text-center">
-                        <p class="text-xs font-weight-bold mb-0">Bounce:</p>
-                        <h6 class="text-sm mb-0">23.44%</h6>
-                      </div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td class="w-30">
-                      <div class="d-flex px-2 py-1 align-items-center">
-                        <div>
-                          <img src="{{asset('img/icons/flags/BR.png')}}" alt="Country flag">
-                        </div>
-                        <div class="ms-4">
-                          <p class="text-xs font-weight-bold mb-0">Country:</p>
-                          <h6 class="text-sm mb-0">Brasil</h6>
-                        </div>
-                      </div>
-                    </td>
-                    <td>
-                      <div class="text-center">
-                        <p class="text-xs font-weight-bold mb-0">Sales:</p>
-                        <h6 class="text-sm mb-0">562</h6>
-                      </div>
-                    </td>
-                    <td>
-                      <div class="text-center">
-                        <p class="text-xs font-weight-bold mb-0">Value:</p>
-                        <h6 class="text-sm mb-0">$143,960</h6>
-                      </div>
-                    </td>
-                    <td class="align-middle text-sm">
-                      <div class="col text-center">
-                        <p class="text-xs font-weight-bold mb-0">Bounce:</p>
-                        <h6 class="text-sm mb-0">32.14%</h6>
-                      </div>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-5">
-          <div class="card">
-            <div class="card-header pb-0 p-3">
-              <h6 class="mb-0">Categories</h6>
-            </div>
-            <div class="card-body p-3">
-              <ul class="list-group">
-                <li class="list-group-item border-0 d-flex justify-content-between ps-0 mb-2 border-radius-lg">
-                  <div class="d-flex align-items-center">
-                    <div class="icon icon-shape icon-sm me-3 bg-gradient-dark shadow text-center">
-                      <i class="ni ni-mobile-button text-white opacity-10"></i>
-                    </div>
-                    <div class="d-flex flex-column">
-                      <h6 class="mb-1 text-dark text-sm">Devices</h6>
-                      <span class="text-xs">250 in stock, <span class="font-weight-bold">346+ sold</span></span>
-                    </div>
-                  </div>
-                  <div class="d-flex">
-                    <button class="btn btn-link btn-icon-only btn-rounded btn-sm text-dark icon-move-right my-auto"><i class="ni ni-bold-right" aria-hidden="true"></i></button>
-                  </div>
+              <!-- /Search -->
+
+              <ul class="navbar-nav flex-row align-items-center ms-auto">
+                <!-- Place this tag where you want the button to render. -->
+                <li class="nav-item lh-1 me-3">
+                  <a
+                    class="github-button"
+                    href="https://github.com/themeselection/sneat-html-admin-template-free"
+                    data-icon="octicon-star"
+                    data-size="large"
+                    data-show-count="true"
+                    aria-label="Star themeselection/sneat-html-admin-template-free on GitHub"
+                    >Star</a
+                  >
                 </li>
-                <li class="list-group-item border-0 d-flex justify-content-between ps-0 mb-2 border-radius-lg">
-                  <div class="d-flex align-items-center">
-                    <div class="icon icon-shape icon-sm me-3 bg-gradient-dark shadow text-center">
-                      <i class="ni ni-tag text-white opacity-10"></i>
+
+                <!-- User -->
+                <li class="nav-item navbar-dropdown dropdown-user dropdown">
+                  <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);" data-bs-toggle="dropdown">
+                    <div class="avatar avatar-online">
+                      <img src="{{asset('img/avatars/1.png')}}" alt class="w-px-40 h-auto rounded-circle" />
                     </div>
-                    <div class="d-flex flex-column">
-                      <h6 class="mb-1 text-dark text-sm">Tickets</h6>
-                      <span class="text-xs">123 closed, <span class="font-weight-bold">15 open</span></span>
-                    </div>
-                  </div>
-                  <div class="d-flex">
-                    <button class="btn btn-link btn-icon-only btn-rounded btn-sm text-dark icon-move-right my-auto"><i class="ni ni-bold-right" aria-hidden="true"></i></button>
-                  </div>
+                  </a>
+                  <ul class="dropdown-menu dropdown-menu-end">
+                    @guest
+                        @if (Route::has('login'))
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                            </li>
+                        @endif
+
+                        @if (Route::has('register'))
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                            </li>
+                        @endif
+                    @else
+                    <li>
+                      <a class="dropdown-item" href="#">
+                        <div class="d-flex">
+                          <div class="flex-shrink-0 me-3">
+                            <div class="avatar avatar-online">
+                              <img src="{{asset('img/avatars/1.png')}}" alt class="w-px-40 h-auto rounded-circle" />
+                            </div>
+                          </div>
+                          <div class="flex-grow-1">
+                            <span class="fw-semibold d-block">{{ Auth::user()->name }}</span>
+                            {{-- <small class="text-muted">Admin</small> --}}
+                          </div>
+                        </div>
+                      </a>
+                    </li>
+                    <li>
+                      <div class="dropdown-divider"></div>
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="#">
+                        <i class="bx bx-user me-2"></i>
+                        <span class="align-middle">My Profile</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="#">
+                        <i class="bx bx-cog me-2"></i>
+                        <span class="align-middle">Settings</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="#">
+                        <span class="d-flex align-items-center align-middle">
+                          <i class="flex-shrink-0 bx bx-credit-card me-2"></i>
+                          <span class="flex-grow-1 align-middle">Billing</span>
+                          <span class="flex-shrink-0 badge badge-center rounded-pill bg-danger w-px-20 h-px-20">4</span>
+                        </span>
+                      </a>
+                    </li>
+                    <li>
+                      <div class="dropdown-divider"></div>
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="{{ route('logout') }}" 
+                      onclick="event.preventDefault(); 
+                      document.getElementById('logout-form').submit();">
+                        <i class="bx bx-power-off me-2"></i>
+                        <span class="align-middle">{{ __('Logout') }}</span>
+                      </a>
+                      <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                          @csrf
+                      </form>
+                    </li>
+                    @endguest
+                  </ul>
                 </li>
-                <li class="list-group-item border-0 d-flex justify-content-between ps-0 mb-2 border-radius-lg">
-                  <div class="d-flex align-items-center">
-                    <div class="icon icon-shape icon-sm me-3 bg-gradient-dark shadow text-center">
-                      <i class="ni ni-box-2 text-white opacity-10"></i>
-                    </div>
-                    <div class="d-flex flex-column">
-                      <h6 class="mb-1 text-dark text-sm">Error logs</h6>
-                      <span class="text-xs">1 is active, <span class="font-weight-bold">40 closed</span></span>
-                    </div>
-                  </div>
-                  <div class="d-flex">
-                    <button class="btn btn-link btn-icon-only btn-rounded btn-sm text-dark icon-move-right my-auto"><i class="ni ni-bold-right" aria-hidden="true"></i></button>
-                  </div>
-                </li>
-                <li class="list-group-item border-0 d-flex justify-content-between ps-0 border-radius-lg">
-                  <div class="d-flex align-items-center">
-                    <div class="icon icon-shape icon-sm me-3 bg-gradient-dark shadow text-center">
-                      <i class="ni ni-satisfied text-white opacity-10"></i>
-                    </div>
-                    <div class="d-flex flex-column">
-                      <h6 class="mb-1 text-dark text-sm">Happy users</h6>
-                      <span class="text-xs font-weight-bold">+ 430</span>
-                    </div>
-                  </div>
-                  <div class="d-flex">
-                    <button class="btn btn-link btn-icon-only btn-rounded btn-sm text-dark icon-move-right my-auto"><i class="ni ni-bold-right" aria-hidden="true"></i></button>
-                  </div>
-                </li>
+                <!--/ User -->
               </ul>
             </div>
-          </div>
-        </div>
-      </div>
-      <footer class="footer pt-3  ">
-        <div class="container-fluid">
-          <div class="row align-items-center justify-content-lg-between">
-            <div class="col-lg-6 mb-lg-0 mb-4">
-              <div class="copyright text-center text-sm text-muted text-lg-start">
-                © <script>
-                  document.write(new Date().getFullYear())
-                </script>,
-                made with <i class="fa fa-heart"></i> by
-                <a href="https://www.creative-tim.com" class="font-weight-bold" target="_blank">Creative Tim</a>
-                for a better web.
+          </nav>
+
+          <!-- / Navbar -->
+
+          <!-- Content wrapper -->
+          <div class="content-wrapper">
+            <!-- Content -->
+
+            <div class="container-xxl flex-grow-1 container-p-y">
+              <div class="row">
+                <div class="col-lg-8 mb-4 order-0">
+                  <div class="card">
+                    <div class="d-flex align-items-end row">
+                      <div class="col-sm-7">
+                        <div class="card-body">
+                          <h5 class="card-title text-primary">Congratulations John! 🎉</h5>
+                          <p class="mb-4">
+                            You have done <span class="fw-bold">72%</span> more sales today. Check your new badge in
+                            your profile.
+                          </p>
+
+                          <a href="javascript:;" class="btn btn-sm btn-outline-primary">View Badges</a>
+                        </div>
+                      </div>
+                      <div class="col-sm-5 text-center text-sm-left">
+                        <div class="card-body pb-0 px-0 px-md-4">
+                          <img
+                            src="{{asset('img/illustrations/man-with-laptop-light.png')}}"
+                            height="140"
+                            alt="View Badge User"
+                            data-app-dark-img="illustrations/man-with-laptop-dark.png"
+                            data-app-light-img="illustrations/man-with-laptop-light.png"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-4 col-md-4 order-1">
+                  <div class="row">
+                    <div class="col-lg-6 col-md-12 col-6 mb-4">
+                      <div class="card">
+                        <div class="card-body">
+                          <div class="card-title d-flex align-items-start justify-content-between">
+                            <div class="avatar flex-shrink-0">
+                              <img
+                                src="{{asset('img/icons/unicons/chart-success.png')}}"
+                                alt="chart success"
+                                class="rounded"
+                              />
+                            </div>
+                            <div class="dropdown">
+                              <button
+                                class="btn p-0"
+                                type="button"
+                                id="cardOpt3"
+                                data-bs-toggle="dropdown"
+                                aria-haspopup="true"
+                                aria-expanded="false"
+                              >
+                                <i class="bx bx-dots-vertical-rounded"></i>
+                              </button>
+                              <div class="dropdown-menu dropdown-menu-end" aria-labelledby="cardOpt3">
+                                <a class="dropdown-item" href="javascript:void(0);">View More</a>
+                                <a class="dropdown-item" href="javascript:void(0);">Delete</a>
+                              </div>
+                            </div>
+                          </div>
+                          <span class="fw-semibold d-block mb-1">Profit</span>
+                          <h3 class="card-title mb-2">$12,628</h3>
+                          <small class="text-success fw-semibold"><i class="bx bx-up-arrow-alt"></i> +72.80%</small>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-lg-6 col-md-12 col-6 mb-4">
+                      <div class="card">
+                        <div class="card-body">
+                          <div class="card-title d-flex align-items-start justify-content-between">
+                            <div class="avatar flex-shrink-0">
+                              <img
+                                src="{{asset('img/icons/unicons/wallet-info.png')}}"
+                                alt="Credit Card"
+                                class="rounded"
+                              />
+                            </div>
+                            <div class="dropdown">
+                              <button
+                                class="btn p-0"
+                                type="button"
+                                id="cardOpt6"
+                                data-bs-toggle="dropdown"
+                                aria-haspopup="true"
+                                aria-expanded="false"
+                              >
+                                <i class="bx bx-dots-vertical-rounded"></i>
+                              </button>
+                              <div class="dropdown-menu dropdown-menu-end" aria-labelledby="cardOpt6">
+                                <a class="dropdown-item" href="javascript:void(0);">View More</a>
+                                <a class="dropdown-item" href="javascript:void(0);">Delete</a>
+                              </div>
+                            </div>
+                          </div>
+                          <span>Sales</span>
+                          <h3 class="card-title text-nowrap mb-1">$4,679</h3>
+                          <small class="text-success fw-semibold"><i class="bx bx-up-arrow-alt"></i> +28.42%</small>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- Total Revenue -->
+                <div class="col-12 col-lg-8 order-2 order-md-3 order-lg-2 mb-4">
+                  <div class="card">
+                    <div class="row row-bordered g-0">
+                      <div class="col-md-8">
+                        <h5 class="card-header m-0 me-2 pb-3">Total Revenue</h5>
+                        <div id="totalRevenueChart" class="px-2"></div>
+                      </div>
+                      <div class="col-md-4">
+                        <div class="card-body">
+                          <div class="text-center">
+                            <div class="dropdown">
+                              <button
+                                class="btn btn-sm btn-outline-primary dropdown-toggle"
+                                type="button"
+                                id="growthReportId"
+                                data-bs-toggle="dropdown"
+                                aria-haspopup="true"
+                                aria-expanded="false"
+                              >
+                                2022
+                              </button>
+                              <div class="dropdown-menu dropdown-menu-end" aria-labelledby="growthReportId">
+                                <a class="dropdown-item" href="javascript:void(0);">2021</a>
+                                <a class="dropdown-item" href="javascript:void(0);">2020</a>
+                                <a class="dropdown-item" href="javascript:void(0);">2019</a>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div id="growthChart"></div>
+                        <div class="text-center fw-semibold pt-3 mb-2">62% Company Growth</div>
+
+                        <div class="d-flex px-xxl-4 px-lg-2 p-4 gap-xxl-3 gap-lg-1 gap-3 justify-content-between">
+                          <div class="d-flex">
+                            <div class="me-2">
+                              <span class="badge bg-label-primary p-2"><i class="bx bx-dollar text-primary"></i></span>
+                            </div>
+                            <div class="d-flex flex-column">
+                              <small>2022</small>
+                              <h6 class="mb-0">$32.5k</h6>
+                            </div>
+                          </div>
+                          <div class="d-flex">
+                            <div class="me-2">
+                              <span class="badge bg-label-info p-2"><i class="bx bx-wallet text-info"></i></span>
+                            </div>
+                            <div class="d-flex flex-column">
+                              <small>2021</small>
+                              <h6 class="mb-0">$41.2k</h6>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!--/ Total Revenue -->
+                <div class="col-12 col-md-8 col-lg-4 order-3 order-md-2">
+                  <div class="row">
+                    <div class="col-6 mb-4">
+                      <div class="card">
+                        <div class="card-body">
+                          <div class="card-title d-flex align-items-start justify-content-between">
+                            <div class="avatar flex-shrink-0">
+                              <img src="{{asset('img/icons/unicons/paypal.png')}}" alt="Credit Card" class="rounded" />
+                            </div>
+                            <div class="dropdown">
+                              <button
+                                class="btn p-0"
+                                type="button"
+                                id="cardOpt4"
+                                data-bs-toggle="dropdown"
+                                aria-haspopup="true"
+                                aria-expanded="false"
+                              >
+                                <i class="bx bx-dots-vertical-rounded"></i>
+                              </button>
+                              <div class="dropdown-menu dropdown-menu-end" aria-labelledby="cardOpt4">
+                                <a class="dropdown-item" href="javascript:void(0);">View More</a>
+                                <a class="dropdown-item" href="javascript:void(0);">Delete</a>
+                              </div>
+                            </div>
+                          </div>
+                          <span class="d-block mb-1">Payments</span>
+                          <h3 class="card-title text-nowrap mb-2">$2,456</h3>
+                          <small class="text-danger fw-semibold"><i class="bx bx-down-arrow-alt"></i> -14.82%</small>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-6 mb-4">
+                      <div class="card">
+                        <div class="card-body">
+                          <div class="card-title d-flex align-items-start justify-content-between">
+                            <div class="avatar flex-shrink-0">
+                              <img src="{{asset('img/icons/unicons/cc-primary.png')}}" alt="Credit Card" class="rounded" />
+                            </div>
+                            <div class="dropdown">
+                              <button
+                                class="btn p-0"
+                                type="button"
+                                id="cardOpt1"
+                                data-bs-toggle="dropdown"
+                                aria-haspopup="true"
+                                aria-expanded="false"
+                              >
+                                <i class="bx bx-dots-vertical-rounded"></i>
+                              </button>
+                              <div class="dropdown-menu" aria-labelledby="cardOpt1">
+                                <a class="dropdown-item" href="javascript:void(0);">View More</a>
+                                <a class="dropdown-item" href="javascript:void(0);">Delete</a>
+                              </div>
+                            </div>
+                          </div>
+                          <span class="fw-semibold d-block mb-1">Transactions</span>
+                          <h3 class="card-title mb-2">$14,857</h3>
+                          <small class="text-success fw-semibold"><i class="bx bx-up-arrow-alt"></i> +28.14%</small>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- </div>
+    <div class="row"> -->
+                    <div class="col-12 mb-4">
+                      <div class="card">
+                        <div class="card-body">
+                          <div class="d-flex justify-content-between flex-sm-row flex-column gap-3">
+                            <div class="d-flex flex-sm-column flex-row align-items-start justify-content-between">
+                              <div class="card-title">
+                                <h5 class="text-nowrap mb-2">Profile Report</h5>
+                                <span class="badge bg-label-warning rounded-pill">Year 2021</span>
+                              </div>
+                              <div class="mt-sm-auto">
+                                <small class="text-success text-nowrap fw-semibold"
+                                  ><i class="bx bx-chevron-up"></i> 68.2%</small
+                                >
+                                <h3 class="mb-0">$84,686k</h3>
+                              </div>
+                            </div>
+                            <div id="profileReportChart"></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <!-- Order Statistics -->
+                <div class="col-md-6 col-lg-4 col-xl-4 order-0 mb-4">
+                  <div class="card h-100">
+                    <div class="card-header d-flex align-items-center justify-content-between pb-0">
+                      <div class="card-title mb-0">
+                        <h5 class="m-0 me-2">Order Statistics</h5>
+                        <small class="text-muted">42.82k Total Sales</small>
+                      </div>
+                      <div class="dropdown">
+                        <button
+                          class="btn p-0"
+                          type="button"
+                          id="orederStatistics"
+                          data-bs-toggle="dropdown"
+                          aria-haspopup="true"
+                          aria-expanded="false"
+                        >
+                          <i class="bx bx-dots-vertical-rounded"></i>
+                        </button>
+                        <div class="dropdown-menu dropdown-menu-end" aria-labelledby="orederStatistics">
+                          <a class="dropdown-item" href="javascript:void(0);">Select All</a>
+                          <a class="dropdown-item" href="javascript:void(0);">Refresh</a>
+                          <a class="dropdown-item" href="javascript:void(0);">Share</a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card-body">
+                      <div class="d-flex justify-content-between align-items-center mb-3">
+                        <div class="d-flex flex-column align-items-center gap-1">
+                          <h2 class="mb-2">8,258</h2>
+                          <span>Total Orders</span>
+                        </div>
+                        <div id="orderStatisticsChart"></div>
+                      </div>
+                      <ul class="p-0 m-0">
+                        <li class="d-flex mb-4 pb-1">
+                          <div class="avatar flex-shrink-0 me-3">
+                            <span class="avatar-initial rounded bg-label-primary"
+                              ><i class="bx bx-mobile-alt"></i
+                            ></span>
+                          </div>
+                          <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
+                            <div class="me-2">
+                              <h6 class="mb-0">Electronic</h6>
+                              <small class="text-muted">Mobile, Earbuds, TV</small>
+                            </div>
+                            <div class="user-progress">
+                              <small class="fw-semibold">82.5k</small>
+                            </div>
+                          </div>
+                        </li>
+                        <li class="d-flex mb-4 pb-1">
+                          <div class="avatar flex-shrink-0 me-3">
+                            <span class="avatar-initial rounded bg-label-success"><i class="bx bx-closet"></i></span>
+                          </div>
+                          <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
+                            <div class="me-2">
+                              <h6 class="mb-0">Fashion</h6>
+                              <small class="text-muted">T-shirt, Jeans, Shoes</small>
+                            </div>
+                            <div class="user-progress">
+                              <small class="fw-semibold">23.8k</small>
+                            </div>
+                          </div>
+                        </li>
+                        <li class="d-flex mb-4 pb-1">
+                          <div class="avatar flex-shrink-0 me-3">
+                            <span class="avatar-initial rounded bg-label-info"><i class="bx bx-home-alt"></i></span>
+                          </div>
+                          <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
+                            <div class="me-2">
+                              <h6 class="mb-0">Decor</h6>
+                              <small class="text-muted">Fine Art, Dining</small>
+                            </div>
+                            <div class="user-progress">
+                              <small class="fw-semibold">849k</small>
+                            </div>
+                          </div>
+                        </li>
+                        <li class="d-flex">
+                          <div class="avatar flex-shrink-0 me-3">
+                            <span class="avatar-initial rounded bg-label-secondary"
+                              ><i class="bx bx-football"></i
+                            ></span>
+                          </div>
+                          <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
+                            <div class="me-2">
+                              <h6 class="mb-0">Sports</h6>
+                              <small class="text-muted">Football, Cricket Kit</small>
+                            </div>
+                            <div class="user-progress">
+                              <small class="fw-semibold">99</small>
+                            </div>
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <!--/ Order Statistics -->
+
+                <!-- Expense Overview -->
+                <div class="col-md-6 col-lg-4 order-1 mb-4">
+                  <div class="card h-100">
+                    <div class="card-header">
+                      <ul class="nav nav-pills" role="tablist">
+                        <li class="nav-item">
+                          <button
+                            type="button"
+                            class="nav-link active"
+                            role="tab"
+                            data-bs-toggle="tab"
+                            data-bs-target="#navs-tabs-line-card-income"
+                            aria-controls="navs-tabs-line-card-income"
+                            aria-selected="true"
+                          >
+                            Income
+                          </button>
+                        </li>
+                        <li class="nav-item">
+                          <button type="button" class="nav-link" role="tab">Expenses</button>
+                        </li>
+                        <li class="nav-item">
+                          <button type="button" class="nav-link" role="tab">Profit</button>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="card-body px-0">
+                      <div class="tab-content p-0">
+                        <div class="tab-pane fade show active" id="navs-tabs-line-card-income" role="tabpanel">
+                          <div class="d-flex p-4 pt-3">
+                            <div class="avatar flex-shrink-0 me-3">
+                              <img src="{{asset('img/icons/unicons/wallet.png')}}" alt="User" />
+                            </div>
+                            <div>
+                              <small class="text-muted d-block">Total Balance</small>
+                              <div class="d-flex align-items-center">
+                                <h6 class="mb-0 me-1">$459.10</h6>
+                                <small class="text-success fw-semibold">
+                                  <i class="bx bx-chevron-up"></i>
+                                  42.9%
+                                </small>
+                              </div>
+                            </div>
+                          </div>
+                          <div id="incomeChart"></div>
+                          <div class="d-flex justify-content-center pt-4 gap-2">
+                            <div class="flex-shrink-0">
+                              <div id="expensesOfWeek"></div>
+                            </div>
+                            <div>
+                              <p class="mb-n1 mt-1">Expenses This Week</p>
+                              <small class="text-muted">$39 less than last week</small>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!--/ Expense Overview -->
+
+                <!-- Transactions -->
+                <div class="col-md-6 col-lg-4 order-2 mb-4">
+                  <div class="card h-100">
+                    <div class="card-header d-flex align-items-center justify-content-between">
+                      <h5 class="card-title m-0 me-2">Transactions</h5>
+                      <div class="dropdown">
+                        <button
+                          class="btn p-0"
+                          type="button"
+                          id="transactionID"
+                          data-bs-toggle="dropdown"
+                          aria-haspopup="true"
+                          aria-expanded="false"
+                        >
+                          <i class="bx bx-dots-vertical-rounded"></i>
+                        </button>
+                        <div class="dropdown-menu dropdown-menu-end" aria-labelledby="transactionID">
+                          <a class="dropdown-item" href="javascript:void(0);">Last 28 Days</a>
+                          <a class="dropdown-item" href="javascript:void(0);">Last Month</a>
+                          <a class="dropdown-item" href="javascript:void(0);">Last Year</a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card-body">
+                      <ul class="p-0 m-0">
+                        <li class="d-flex mb-4 pb-1">
+                          <div class="avatar flex-shrink-0 me-3">
+                            <img src="{{asset('img/icons/unicons/paypal.png')}}" alt="User" class="rounded" />
+                          </div>
+                          <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
+                            <div class="me-2">
+                              <small class="text-muted d-block mb-1">Paypal</small>
+                              <h6 class="mb-0">Send money</h6>
+                            </div>
+                            <div class="user-progress d-flex align-items-center gap-1">
+                              <h6 class="mb-0">+82.6</h6>
+                              <span class="text-muted">USD</span>
+                            </div>
+                          </div>
+                        </li>
+                        <li class="d-flex mb-4 pb-1">
+                          <div class="avatar flex-shrink-0 me-3">
+                            <img src="{{asset('img/icons/unicons/wallet.png')}}" alt="User" class="rounded" />
+                          </div>
+                          <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
+                            <div class="me-2">
+                              <small class="text-muted d-block mb-1">Wallet</small>
+                              <h6 class="mb-0">Mac'D</h6>
+                            </div>
+                            <div class="user-progress d-flex align-items-center gap-1">
+                              <h6 class="mb-0">+270.69</h6>
+                              <span class="text-muted">USD</span>
+                            </div>
+                          </div>
+                        </li>
+                        <li class="d-flex mb-4 pb-1">
+                          <div class="avatar flex-shrink-0 me-3">
+                            <img src="{{asset('img/icons/unicons/chart.png')}}" alt="User" class="rounded" />
+                          </div>
+                          <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
+                            <div class="me-2">
+                              <small class="text-muted d-block mb-1">Transfer</small>
+                              <h6 class="mb-0">Refund</h6>
+                            </div>
+                            <div class="user-progress d-flex align-items-center gap-1">
+                              <h6 class="mb-0">+637.91</h6>
+                              <span class="text-muted">USD</span>
+                            </div>
+                          </div>
+                        </li>
+                        <li class="d-flex mb-4 pb-1">
+                          <div class="avatar flex-shrink-0 me-3">
+                            <img src="{{asset('img/icons/unicons/cc-success.png')}}" alt="User" class="rounded" />
+                          </div>
+                          <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
+                            <div class="me-2">
+                              <small class="text-muted d-block mb-1">Credit Card</small>
+                              <h6 class="mb-0">Ordered Food</h6>
+                            </div>
+                            <div class="user-progress d-flex align-items-center gap-1">
+                              <h6 class="mb-0">-838.71</h6>
+                              <span class="text-muted">USD</span>
+                            </div>
+                          </div>
+                        </li>
+                        <li class="d-flex mb-4 pb-1">
+                          <div class="avatar flex-shrink-0 me-3">
+                            <img src="{{asset('img/icons/unicons/wallet.png')}}" alt="User" class="rounded" />
+                          </div>
+                          <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
+                            <div class="me-2">
+                              <small class="text-muted d-block mb-1">Wallet</small>
+                              <h6 class="mb-0">Starbucks</h6>
+                            </div>
+                            <div class="user-progress d-flex align-items-center gap-1">
+                              <h6 class="mb-0">+203.33</h6>
+                              <span class="text-muted">USD</span>
+                            </div>
+                          </div>
+                        </li>
+                        <li class="d-flex">
+                          <div class="avatar flex-shrink-0 me-3">
+                            <img src="{{asset('img/icons/unicons/cc-warning.png')}}" alt="User" class="rounded" />
+                          </div>
+                          <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
+                            <div class="me-2">
+                              <small class="text-muted d-block mb-1">Mastercard</small>
+                              <h6 class="mb-0">Ordered Food</h6>
+                            </div>
+                            <div class="user-progress d-flex align-items-center gap-1">
+                              <h6 class="mb-0">-92.45</h6>
+                              <span class="text-muted">USD</span>
+                            </div>
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <!--/ Transactions -->
               </div>
             </div>
-            <div class="col-lg-6">
-              <ul class="nav nav-footer justify-content-center justify-content-lg-end">
-                <li class="nav-item">
-                  <a href="https://www.creative-tim.com" class="nav-link text-muted" target="_blank">Creative Tim</a>
-                </li>
-                <li class="nav-item">
-                  <a href="https://www.creative-tim.com/presentation" class="nav-link text-muted" target="_blank">About Us</a>
-                </li>
-                <li class="nav-item">
-                  <a href="https://www.creative-tim.com/blog" class="nav-link text-muted" target="_blank">Blog</a>
-                </li>
-                <li class="nav-item">
-                  <a href="https://www.creative-tim.com/license" class="nav-link pe-0 text-muted" target="_blank">License</a>
-                </li>
-              </ul>
-            </div>
+            <!-- / Content -->
+
+            <!-- Footer -->
+            <footer class="content-footer footer bg-footer-theme">
+              <div class="container-xxl d-flex flex-wrap justify-content-between py-2 flex-md-row flex-column">
+                <div class="mb-2 mb-md-0">
+                  ©
+                  <script>
+                    document.write(new Date().getFullYear());
+                  </script>
+                  , made with ❤️ by
+                  <a href="https://themeselection.com" target="_blank" class="footer-link fw-bolder">ThemeSelection</a>
+                </div>
+                <div>
+                  <a href="https://themeselection.com/license/" class="footer-link me-4" target="_blank">License</a>
+                  <a href="https://themeselection.com/" target="_blank" class="footer-link me-4">More Themes</a>
+
+                  <a
+                    href="https://themeselection.com/demo/sneat-bootstrap-html-admin-template/documentation/"
+                    target="_blank"
+                    class="footer-link me-4"
+                    >Documentation</a
+                  >
+
+                  <a
+                    href="https://github.com/themeselection/sneat-html-admin-template-free/issues"
+                    target="_blank"
+                    class="footer-link me-4"
+                    >Support</a
+                  >
+                </div>
+              </div>
+            </footer>
+            <!-- / Footer -->
+
+            <div class="content-backdrop fade"></div>
           </div>
+          <!-- Content wrapper -->
         </div>
-      </footer>
-    </div>
-  </main>
-  <div class="fixed-plugin">
-    <a class="fixed-plugin-button text-dark position-fixed px-3 py-2">
-      <i class="fa fa-cog py-2"> </i>
-    </a>
-    <div class="card shadow-lg">
-      <div class="card-header pb-0 pt-3 ">
-        <div class="float-start">
-          <h5 class="mt-3 mb-0">Argon Configurator</h5>
-          <p>See our dashboard options.</p>
-        </div>
-        <div class="float-end mt-4">
-          <button class="btn btn-link text-dark p-0 fixed-plugin-close-button">
-            <i class="fa fa-close"></i>
-          </button>
-        </div>
-        <!-- End Toggle Button -->
+        <!-- / Layout page -->
       </div>
-      <hr class="horizontal dark my-1">
-      <div class="card-body pt-sm-3 pt-0 overflow-auto">
-        <!-- Sidebar Backgrounds -->
-        <div>
-          <h6 class="mb-0">Sidebar Colors</h6>
-        </div>
-        <a href="javascript:void(0)" class="switch-trigger background-color">
-          <div class="badge-colors my-2 text-start">
-            <span class="badge filter bg-gradient-primary active" data-color="primary" onclick="sidebarColor(this)"></span>
-            <span class="badge filter bg-gradient-dark" data-color="dark" onclick="sidebarColor(this)"></span>
-            <span class="badge filter bg-gradient-info" data-color="info" onclick="sidebarColor(this)"></span>
-            <span class="badge filter bg-gradient-success" data-color="success" onclick="sidebarColor(this)"></span>
-            <span class="badge filter bg-gradient-warning" data-color="warning" onclick="sidebarColor(this)"></span>
-            <span class="badge filter bg-gradient-danger" data-color="danger" onclick="sidebarColor(this)"></span>
-          </div>
-        </a>
-        <!-- Sidenav Type -->
-        <div class="mt-3">
-          <h6 class="mb-0">Sidenav Type</h6>
-          <p class="text-sm">Choose between 2 different sidenav types.</p>
-        </div>
-        <div class="d-flex">
-          <button class="btn bg-gradient-primary w-100 px-3 mb-2 active me-2" data-class="bg-white" onclick="sidebarType(this)">White</button>
-          <button class="btn bg-gradient-primary w-100 px-3 mb-2" data-class="bg-default" onclick="sidebarType(this)">Dark</button>
-        </div>
-        <p class="text-sm d-xl-none d-block mt-2">You can change the sidenav type just on desktop view.</p>
-        <!-- Navbar Fixed -->
-        <div class="d-flex my-3">
-          <h6 class="mb-0">Navbar Fixed</h6>
-          <div class="form-check form-switch ps-0 ms-auto my-auto">
-            <input class="form-check-input mt-1 ms-auto" type="checkbox" id="navbarFixed" onclick="navbarFixed(this)">
-          </div>
-        </div>
-        <hr class="horizontal dark my-sm-4">
-        <div class="mt-2 mb-5 d-flex">
-          <h6 class="mb-0">Light / Dark</h6>
-          <div class="form-check form-switch ps-0 ms-auto my-auto">
-            <input class="form-check-input mt-1 ms-auto" type="checkbox" id="dark-version" onclick="darkMode(this)">
-          </div>
-        </div>
-        <a class="btn bg-gradient-dark w-100" href="https://www.creative-tim.com/product/argon-dashboard">Free Download</a>
-        <a class="btn btn-outline-dark w-100" href="https://www.creative-tim.com/learning-lab/bootstrap/license/argon-dashboard">View documentation</a>
-        <div class="w-100 text-center">
-          <a class="github-button" href="https://github.com/creativetimofficial/argon-dashboard" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star creativetimofficial/argon-dashboard on GitHub">Star</a>
-          <h6 class="mt-3">Thank you for sharing!</h6>
-          <a href="https://twitter.com/intent/tweet?text=Check%20Argon%20Dashboard%20made%20by%20%40CreativeTim%20%23webdesign%20%23dashboard%20%23bootstrap5&amp;url=https%3A%2F%2Fwww.creative-tim.com%2Fproduct%2Fargon-dashboard" class="btn btn-dark mb-0 me-2" target="_blank">
-            <i class="fab fa-twitter me-1" aria-hidden="true"></i> Tweet
-          </a>
-          <a href="https://www.facebook.com/sharer/sharer.php?u=https://www.creative-tim.com/product/argon-dashboard" class="btn btn-dark mb-0 me-2" target="_blank">
-            <i class="fab fa-facebook-square me-1" aria-hidden="true"></i> Share
-          </a>
-        </div>
-      </div>
+
+      <!-- Overlay -->
+      <div class="layout-overlay layout-menu-toggle"></div>
     </div>
-  </div>
-  <!--   Core JS Files   -->
-  <script src="{{asset('js/core/popper.min.js')}}"></script>
-  <script src="{{asset('js/core/bootstrap.min.js')}}"></script>
-  <script src="{{asset('js/plugins/perfect-scrollbar.min.js')}}"></script>
-  <script src="{{asset('js/plugins/smooth-scrollbar.min.js')}}"></script>
-  <script src="{{asset('js/plugins/chartjs.min.js')}}"></script>
-  <script>
-    var ctx1 = document.getElementById("chart-line").getContext("2d");
+    <!-- / Layout wrapper -->
 
-    var gradientStroke1 = ctx1.createLinearGradient(0, 230, 0, 50);
+    <div class="buy-now">
+      <a
+        href="https://themeselection.com/products/sneat-bootstrap-html-admin-template/"
+        target="_blank"
+        class="btn btn-danger btn-buy-now"
+        >Upgrade to Pro</a
+      >
+    </div>
 
-    gradientStroke1.addColorStop(1, 'rgba(94, 114, 228, 0.2)');
-    gradientStroke1.addColorStop(0.2, 'rgba(94, 114, 228, 0.0)');
-    gradientStroke1.addColorStop(0, 'rgba(94, 114, 228, 0)');
-    new Chart(ctx1, {
-      type: "line",
-      data: {
-        labels: ["Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-        datasets: [{
-          label: "Mobile apps",
-          tension: 0.4,
-          borderWidth: 0,
-          pointRadius: 0,
-          borderColor: "#5e72e4",
-          backgroundColor: gradientStroke1,
-          borderWidth: 3,
-          fill: true,
-          data: [50, 40, 300, 220, 500, 250, 400, 230, 500],
-          maxBarThickness: 6
+    <!-- Core JS -->
+    <!-- build:js assets/vendor/js/core.js -->
+    <script src="{{asset('vendor/libs/jquery/jquery.js')}}"></script>
+    <script src="{{asset('vendor/libs/popper/popper.js')}}"></script>
+    <script src="{{asset('vendor/js/bootstrap.js')}}"></script>
+    <script src="{{asset('vendor/libs/perfect-scrollbar/perfect-scrollbar.js')}}"></script>
 
-        }],
-      },
-      options: {
-        responsive: true,
-        maintainAspectRatio: false,
-        plugins: {
-          legend: {
-            display: false,
-          }
-        },
-        interaction: {
-          intersect: false,
-          mode: 'index',
-        },
-        scales: {
-          y: {
-            grid: {
-              drawBorder: false,
-              display: true,
-              drawOnChartArea: true,
-              drawTicks: false,
-              borderDash: [5, 5]
-            },
-            ticks: {
-              display: true,
-              padding: 10,
-              color: '#fbfbfb',
-              font: {
-                size: 11,
-                family: "Open Sans",
-                style: 'normal',
-                lineHeight: 2
-              },
-            }
-          },
-          x: {
-            grid: {
-              drawBorder: false,
-              display: false,
-              drawOnChartArea: false,
-              drawTicks: false,
-              borderDash: [5, 5]
-            },
-            ticks: {
-              display: true,
-              color: '#ccc',
-              padding: 20,
-              font: {
-                size: 11,
-                family: "Open Sans",
-                style: 'normal',
-                lineHeight: 2
-              },
-            }
-          },
-        },
-      },
-    });
-  </script>
-  <script>
-    var win = navigator.platform.indexOf('Win') > -1;
-    if (win && document.querySelector('#sidenav-scrollbar')) {
-      var options = {
-        damping: '0.5'
-      }
-      Scrollbar.init(document.querySelector('#sidenav-scrollbar'), options);
-    }
-  </script>
-  <!-- Github buttons -->
-  <script async defer src="https://buttons.github.io/buttons.js"></script>
-  <!-- Control Center for Soft Dashboard: parallax effects, scripts for the example pages etc -->
-  <script src="{{asset('js/argon-dashboard.min.js?v=2.0.4')}}"></script>
-</body>
+    <script src="{{asset('vendor/js/menu.js')}}"></script>
+    <!-- endbuild -->
 
+    <!-- Vendors JS -->
+    <script src="{{asset('vendor/libs/apex-charts/apexcharts.js')}}"></script>
+
+    <!-- Main JS -->
+    <script src="{{asset('js/main.js')}}"></script>
+
+    <!-- Page JS -->
+    <script src="{{asset('js/dashboards-analytics.js')}}"></script>
+
+    <!-- Place this tag in your head or just before your close body tag. -->
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+  </body>
 </html>
