@@ -18,7 +18,7 @@ class ListAplikasiResource extends JsonResource
             'id' => $this->id,
             'nama' => $this->nama,
             'url' => $this->url,
-            'foto' => asset('storage/images/' . $this->foto),
+            'foto' => asset('/image/foto/' . $this->foto),
             'status' => $this->status,
             'created_at' => $this->created_at,
             'updated_at' => $this->updated_at,
