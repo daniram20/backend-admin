@@ -9,14 +9,17 @@ class ViewAplikasiController extends Controller
 {
     public function index()
     {
-        $dataList = ListAplikasi::all();
-        return view('listaplikasi.listaplikasi');
+        $listAplikasi = ListAplikasi::all();
+        return view('listaplikasi.listaplikasi', compact('listAplikasi'));
+    }
+
+    public function create() 
+    {
+        return view('listaplikasi.create');
     }
 
     public function store(Request $request)
     {
-        $listaplikasi = new ListAplikasi();
-
         $request->validate([
             'nama'=>'required',
             'url'=>'required',
@@ -24,48 +27,17 @@ class ViewAplikasiController extends Controller
             'status'=>'required',
         ]);
 
-        $filename="";
-        if($request->hasFile('foto')){
-            $filename=$request->file('foto')->store('posts', 'public');
-        }else{
-            $filename=null;
+        $input = $request->all();
+        if ($image = $request->file('foto')){
+            $destionationPath = 'image/foto';
+            $icon = date('YmdHis') . "." . $image->getClientOriginalExtension();
+            $image->move($destionationPath, $icon);
+            $input['foto'] = $icon;
         }
 
-        $listaplikasi->nama=$request->nama;
-        $listaplikasi->url=$request->url;
-        $listaplikasi->foto=$filename;
-        $listaplikasi->status=$request->status;
-        $listaplikasi->save();
+        ListAplikasi::create($input);
 
-        return response()->json([
-            'message' => 'Data berhasil ditambahkan',
-            'data' => $listaplikasi,
-        ]);
-
-        // $request->validate([
-        //     'nama' => 'required',
-        //     'url' => 'required',
-        //     'foto' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-        //     'status' => 'required',
-        // ]);
-
-        // $input = $request->all();
-        // if ($image = $request->file('foto')) {
-        //     $destionationPath = 'image/foto/';
-        //     $aplikasiImg = date('YmdHis') . "." . $image->getClientOriginalExtension();
-        //     $image->move($destionationPath, $aplikasiImg);
-        //     $input['foto'] = $aplikasiImg;
-        // }
-
-        // ListAplikasi::create($input);
-
-        // return response()->json([
-        //     'message' => 'Aplikasi telah ditambahkan',
-        //     'nama' => $request->nama,
-        //     'url' => $request->url,
-        //     'foto' => asset('image/foto/' . $aplikasiImg),
-        //     'status' => $request->status,
-        // ]);
+        return redirect()->route('list.index')->with('success', 'Data berhasil ditambahkan');
     }
 
     public function show($id)
@@ -78,6 +50,11 @@ class ViewAplikasiController extends Controller
         ]);
     }
 
+    public function edit(ListAplikasi $listAplikasi)
+    {
+        return view('listaplikasi.edit', compact('listAplikasi'));
+    }
+
     public function update(Request $request, ListAplikasi $listAplikasi)
    {
         $request->validate([
@@ -88,37 +65,25 @@ class ViewAplikasiController extends Controller
         ]);
 
         $input = $request->all();
-        if ($image = $request->file('foto')) {
-            $destionationPath = 'image/foto/';
-            $aplikasiImg = date('YmdHis') . "." . $image->getClientOriginalExtension();
-            $image->move($destionationPath, $aplikasiImg);
-            $input['foto'] = $aplikasiImg;
-        } else {
-            unset($input['foto']);
+        if ($image = $request->file('foto')){
+            $destionationPath = 'image/foto';
+            $icon = date('YmdHis') . "." . $image->getClientOriginalExtension();
+            $image->move($destionationPath, $icon);
+            $input['foto'] = $icon;
         }
 
         $listAplikasi->update($input);
 
-        return response()->json([
-            'message' => 'Aplikasi telah diupdate',
-            'data' => $input
-        ]);
+        return redirect()->route('list.index')->with('success', 'Data berhasil diubah');
 
    }
    
    public function destroy($id)
    {
-        $listaplikasi = ListAplikasi::where('id', $id)->delete();
-        
-        if ($listaplikasi != null) {
-            return response()->json([
-                'message' => 'Data list aplikasi dihapus',
-                'data' => $listaplikasi
-            ]);
-        } else {
-            return response()->json([
-                'message' => 'Data tidak ditemukan',
-            ], 404);
-        }
+    $data =  ListAplikasi::find($id);
+    unlink("image/foto/" . $data->foto);
+    $data::where("id", $id)->delete();
+
+    return redirect()->route('list.index')->with('success', 'Data berhasil dihapus');
    }
 }
