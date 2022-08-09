@@ -5,8 +5,8 @@
     <div class="row">
       <div class="col-md-12">
         <div class="card mb-4">
-          <h5 class="card-header">Tambah Aplikasi</h5>
-          <form action="{{ route('list.index', $listAplikasi->id) }}" method="POST" enctype="multipart/form-data">
+          <h5 class="card-header">Edit Aplikasi</h5>
+          <form action="{{ route('list.update', $listAplikasi->id) }}" method="POST" enctype="multipart/form-data">
             @csrf
             @method('PUT')
 
@@ -40,10 +40,10 @@
                 <label for="formFile" class="form-label">Icon Aplikasi</label>
                 <input class="form-control" type="file" id="formFile" name="foto" />
                 <br>
-                <img src="/image/foto/{{ $listAplikasi->foto }}" width="200px">
+                <img src="/image/foto/{{ $listAplikasi->foto }}" width="100px">
               </div>
               <div class="col-xs-12 col-sm-12 col-md-12 text-right">
-                <button type="submit" class="btn btn-outline-primary">Submit Data</button>
+                <button type="submit" class="btn btn-outline-primary">Update Data</button>
             </div>
             </div>
           </form>
