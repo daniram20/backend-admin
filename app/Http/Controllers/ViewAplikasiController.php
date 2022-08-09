@@ -43,32 +43,29 @@ class ViewAplikasiController extends Controller
 
     public function edit($id)
     {
-        $listAplikasi =  ListAplikasi::find($id);
+        $listAplikasi = ListAplikasi::find($id);
         return view('listaplikasi.edit', compact('listAplikasi'));
     }
 
-    public function update(Request $request, ListAplikasi $listAplikasi)
+    public function update(Request $request, $id)
     {
-        $request->validate([
-            'nama' => 'required',
-            'url' => 'required',
-            'foto' => 'required|max:2048',
-            'status' => 'required',
-        ]);
+        // $request->validate([
+        //     'nama' => 'required',
+        //     'url' => 'required',
+        //     'foto' => 'required|max:2048',
+        //     'status' => 'required',
+        // ]);
+
         $input = $request->all();
-
         if ($image = $request->file('foto')) {
-            $destionationPath = 'image/foto/';
-            $karangtarunaImg = date('YmdHis') . "." . $image->getClientOriginalExtension();
-            $image->move($destionationPath, $karangtarunaImg);
-            $input['foto'] = $karangtarunaImg;
-        } else {
-            unset($input['foto']);
+            $destionationPath = 'image/foto';
+            $icon = date('YmdHis') . "." . $image->getClientOriginalExtension();
+            $image->move($destionationPath, $icon);
+            $input['foto'] = $icon;
         }
-
+        $listAplikasi = ListAplikasi::find($id);
         $listAplikasi->update($input);
-
-        return redirect()->route('list.index');
+        return redirect()->route('list.index')->with('success', 'Data berhasil diubah');
     }
 
     public function destroy($id)
