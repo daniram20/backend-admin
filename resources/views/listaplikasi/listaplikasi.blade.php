@@ -30,16 +30,16 @@
             @endif
             </td>
             <td>
-              <div class="d-grid gap-2 d-md-flex">
-                <a href="{{ route('list.edit', ['list' => $aplikasi->id]) }}"
-                    class="btn btn-outline-success mr-4"> Edit
-                    </a>
-                <form method="POST" action="{{ route('list.destroy', $aplikasi->id) }}">
-                    @csrf
-                    <input name="_method" type="hidden" value="DELETE">
-                    <button type="submit" class="btn btn-outline-danger show_confirm " data-toggle="tooltip"
-                        title='Delete'>Hapus</button>
-                </form>
+              <form action="{{ route('list.destroy', $aplikasi->id) }}" method="post">
+                @csrf
+                @method('DELETE')
+                <a href="{{ route('list.edit', $aplikasi->id) }}"
+                    class="btn btn-outline-success">Edit</a>
+                <button type="submit" class="btn btn-outline-danger"
+                    onclick="return confirm('are you sure?')">
+                    Delete
+                </button>
+            </form>
             </div>
             </td>
           </tr>
